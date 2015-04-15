@@ -7,6 +7,7 @@
     <body>
         <?php
         echo "Nieco vypisane";
+        echo "Mecheche od Maja";
         ?>
     </body>
 </html>
