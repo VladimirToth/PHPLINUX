@@ -24,7 +24,7 @@
 <body>
 <div class="holder top">
     <div class="inner">
-        <a href="/aptech/web/?page=contact">Contact</a>
+        <a href="/PhpProject/?page=contact">Contact</a>
     </div>
 </div>
 
@@ -37,12 +37,12 @@
 <header class="holder">
     <nav class="inner">
         <ul>
-            <li><a href="/aptech/web/">Home</a></li>
+            <li><a href="/PhpProject">Home</a></li>
             <li>
-                <a href="/aptech/web/?page=about">Eshop</a>
+                <a href="/PhpProject/?page=about">Eshop</a>
                 <?php display_categories(); ?>
             </li>
-            <li><a href="/aptech/web/?page=contact">Contact</a></li>
+            <li><a href="/PhpProject/?page=contact">Contact</a></li>
         </ul>
     </nav>
 </header>
