@@ -9,7 +9,7 @@
 
 <div class="footer_section" id="newsletter">
     <h3>Newsletter</h3>
-    <form method="post" action="/aptech/web/#newsletter">
+    <form method="post" action="/PhpProject/#newsletter">
         Email
         <input type="email" name="email"/>
         <input type="submit"/>
