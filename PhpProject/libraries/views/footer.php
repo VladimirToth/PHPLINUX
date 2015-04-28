@@ -1,6 +1,7 @@
-<div class="footer_section">
-    <h3>About us</h3>
-    <p>Text text</p>
+<div id="footer">
+  <div class="container">
+    <p class="text-muted">Hello to our footer</p>
+  </div>
 </div>
 
 <div class="footer_section">
