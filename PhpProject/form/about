@@ -1,0 +1,26 @@
+<?php
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+?>
+<html>
+    <head>
+        
+    </head>
+    
+    <body>
+      <h1>About us</h1>
+          <h2>We believe your visit to the dental practice should be a pleasure rather than a chore.  From entering the practice until the moment you leave, our aim is to deliver a dental experience that you will feel is first class. We aim to excel in everything we do to meet all your dental needs, leaving you with a confident, healthy and happy smile. From a relaxing, comfortable environment whilst you wait for your appointment to our high quality surgeries and a friendly, approachable team your experience is of utmost importance to us.</h2>
+        
+          <p><img class="img-right" src="../images/about-image.jpg">We have a fundamental belief in providing high quality dentistry, using excellent materials and dental laboratories at a fair price.  Being a member of our practice brings additional benefits, reducing the cost of any treatment you may require and saving on your everyday shopping through our perks scheme too!</p>
+
+          <p>We know that a great looking smile can make you feel like a million dollars!  With our Invisalign, Airflow, Enlighten Whitening and Cosmetic dental treatments, we can help you achieve that confidence that will leave you walking around with a broad smile for all to admire.</p>
+
+          <p>We fundamentally believe that learning how to look after your teeth well is the best thing any of us can do to achieve fewer fillings and other dental treatment in the future.  We believe this starts as early in life as possible, and to this aim we have our Dental Health Fitness Trainer who can provide children and adults with everything needed to make this goal achievable.</p>
+
+          <p>We have a fantastic team of hygienists, providing appointments across the week, to help you achieve healthy teeth and gums, making your mouth feel really clean.</p>
+
+    </body>
+</html>

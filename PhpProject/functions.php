@@ -56,7 +56,7 @@ function get_products(){
     while($product = mysqli_fetch_array($result, MYSQL_ASSOC)) {
         echo '<div class="product">
             <p class="p-name">
-<a href="/aptech/web/?page=about&pid='.$product['id_product'].'">' . $product['menop'] . '</a></p>
+<a href="/PhpProject/?page=about&pid='.$product['id_product'].'">' . $product['menop'] . '</a></p>
             <p class="p-description">' . $product['description'] . '</p>
             <p class="p-manufacturer">' . $product['manufacturer'] . '</p>
             <p class="p-price">' . $product['price'] . '</p>
@@ -82,7 +82,7 @@ function create_pagination() {
     $maxpages = ceil($numproduct / PERPAGE);
     for($i = 1; $i <= $maxpages; $i++) {
         echo '
-            <a href="/aptech/web/?page=about&p='.$i.''.(isset($_GET['cid']) ? '&cid=' . $_GET['cid'] : '').'">'.$i.'</a>
+            <a href="/PhpProject/?page=about&p='.$i.''.(isset($_GET['cid']) ? '&cid=' . $_GET['cid'] : '').'">'.$i.'</a>
         ';
     }
 }
@@ -127,7 +127,7 @@ function display_categories() {
         echo '<ul>';
         while($category = mysqli_fetch_array($result, MYSQL_ASSOC)) {
 echo '<li>
-    <a href="/aptech/web/?page=about&cid='.$category['id_category'].'">
+    <a href="/PhpProject/?page=about&cid='.$category['id_category'].'">
     '.$category['category_name'].'
     </a>
 </li>';
