@@ -60,13 +60,13 @@
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav nav-justified">
-          <li><a href="/PHPLINUX/PhpProject/?page=index">Offers</a></li>
+          <li><a href="#section4">Offers</a></li>
           <li><a href="#section2">Our Staff</a></li>
-          <li><a href="#section3">Appointment</a></li>
+          <li><a href="#">Appointment</a></li>
           <li class="active"><a href="#section1"><strong>Welcome</strong></a></li>
-          <li><a href="/PHPLINUX/PhpProject/content/?page=about">About</a></li>
-          <li><a href="/PHPLINUX/PhpProject/content/?page=contact">Contact</a></li>
-          <li><a href="/PHPLINUX/PhpProject/content/?page=contact">Feedback</a></li>
+          <li><a href="#section3">About</a></li>
+          <li><a href="#section5">Contact</a></li>
+          <li><a href="#section6">Feedback</a></li>
 <!--          <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <b class="caret"></b></a>
             <ul class="dropdown-menu">
@@ -88,20 +88,27 @@
 <div class="container">
   <div class="col-sm-10 col-sm-offset-1">
     <div class="page-header text-center">
-      <h1>Welcome to best dentist site ever!</h1>
+      <h1>Thank you for choosing Dentists from another universe.</h1>
     </div>
     
     <p class="lead text-center">
-      Twitter Bootstrap is a front-end toolkit to rapidly build web applications.
+      We welcome you to our dental practice located in the heart of downtown Bratislava.
     </p>
     <p class="text-center">
-      Bootstrap is a framework that uses some of the latest browser techniques 
-      to provide you with stylish typography, navigation, buttons, tables, etc. 
-      One of the primary changes in Bootstrap 3 is an emphasis on Mobile-First responsive design. 
-      The goal is to elevate the mobile experience to a first-class citizen of the design process, 
-      because several billion mobile users is quite a large market to tap into. 
-      So, sites built with the current Bootstrap version target mobile devices and 
-      scale for larger screens depending on screen size.
+      Welcome to Dentists from another universe, a progressive dental clinic in downtown Bratislava 
+      that prides itself on expanding the boundaries of excellence in dentistry and customer service. 
+      We are always on the leading edge of technology, so that we may always offer you uncompromising 
+      care.
+
+      We want our patients to feel calm and relaxed during each general, cosmetic, and restorative 
+      treatment appointment. Our dentists and team members carefully listen to patients and provide 
+      sound advice and confident reassurance at all times. In this day and age of fast food and rushed 
+      service, we've chosen instead to keep our practice just the opposite: calm, relaxed, 
+      and incredibly comfortable. We are always accepting new patients and referrals.
+
+      We are conveniently located in the financial district of Downtown Bratislava inside J&T Building
+      in Bevanda Tower 115. We have convenient extended hours 
+      and caring team members to make your experience the best it can be!
     </p>
   </div>
 </div>
@@ -254,11 +261,25 @@
     
       <address>
         <strong>Email Us</strong><br>
-        <a href="mailto:#">dentist@example.com</a>
+        <a href="mailto:trainscheduleconfirmation@gmail.com">dentist@example.com</a>
       </address>          
   </div>
   
 </div><!--/row-->
+
+<div class="divider" id="section6"></div>
+  
+<div class="container">
+  <div class="col-sm-10 col-sm-offset-1">
+    
+    <p class="lead text-center">
+      Our feedback:
+    </p>
+    <p class="text-center">
+      blablabla
+    </p>
+  </div>
+</div>
 
 <div class="container">
   	<div class="col-sm-8 col-sm-offset-2 text-center">
