@@ -21,6 +21,41 @@
 	</head>
 	<body>
 <!-- Wrap all page content here -->
+
+<?php
+define('DBHOST','localhost');
+define('DBUSER','root');
+define('DBPASS','');
+define('DBSELECT','dentist');
+define('PERPAGE',3);
+
+function display_staffs() {
+    $conn = new mysqli(DBHOST, DBUSER, DBPASS, DBSELECT);
+    
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
+    
+    $sql = "SELECT * FROM staff";
+    $result = $conn->query($sql);
+    
+    if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "id: " . $row["ID"]. " - Name: " . $row["Name"]. " " . $row["JobTitle"]. 
+                " " .$row["JobTitle"]. " " .$row["Image"]. " " .$row["Public"]. 
+                " " .$row["Qualifications"]. " " .$row["WorkingDaysandTimes"]. " " .
+                $row["Email"]. "<br>";
+    }
+    } else {
+        echo "0 results";
+    }
+    $conn->close();  
+}
+
+?>
+
 <div id="wrap">
   
 <header class="masthead">
@@ -114,11 +149,17 @@
 </div>
     
 <div class="divider" id="section2"></div>
-  
+<div class="container">     
+
+</div>
+
 <section class="bg-1">
-  <div class="col-sm-6 col-sm-offset-3 text-center">
+<!--  <div class="col-sm-6 col-sm-offset-3 text-center">
       <h2 style="padding:20px;background-color:rgba(5,5,5,.8)">
-          Try and Tweak Different Layouts</h2></div>
+          Try and Tweak Different Layouts</h2></div>-->
+    <?php
+    display_staffs();
+    ?>
 </section>
   
 <div class="divider"></div>
@@ -150,7 +191,7 @@
           Leverage Snippets &amp; Examples</h2></div>
 </section>
   
-<div class="continer bg-4">
+<div class="container bg-4">
 	<div class="row">
 	   <div class="col-sm-4 col-xs-6">
       
