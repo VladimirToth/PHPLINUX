@@ -21,6 +21,41 @@
 	</head>
 	<body>
 <!-- Wrap all page content here -->
+
+<?php
+define('DBHOST','localhost');
+define('DBUSER','root');
+define('DBPASS','');
+define('DBSELECT','dentist');
+define('PERPAGE',3);
+
+function display_staffs() {
+    $conn = new mysqli(DBHOST, DBUSER, DBPASS, DBSELECT);
+    
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
+    
+    $sql = "SELECT * FROM staff";
+    $result = $conn->query($sql);
+    
+    if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "id: " . $row["ID"]. " - Name: " . $row["Name"]. " " . $row["JobTitle"]. 
+                " " .$row["JobTitle"]. " " .$row["Image"]. " " .$row["Public"]. 
+                " " .$row["Qualifications"]. " " .$row["WorkingDaysandTimes"]. " " .
+                $row["Email"]. "<br>";
+    }
+    } else {
+        echo "0 results";
+    }
+    $conn->close();  
+}
+
+?>
+
 <div id="wrap">
   
 <header class="masthead">
@@ -60,13 +95,13 @@
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav nav-justified">
-          <li><a href="/PHPLINUX/PhpProject/?page=index">Offers</a></li>
+          <li><a href="#section4">Offers</a></li>
           <li><a href="#section2">Our Staff</a></li>
-          <li><a href="#section3">Appointment</a></li>
+          <li><a href="#">Appointment</a></li>
           <li class="active"><a href="#section1"><strong>Welcome</strong></a></li>
-          <li><a href="/PHPLINUX/PhpProject/content/?page=about">About</a></li>
-          <li><a href="/PHPLINUX/PhpProject/content/?page=contact">Contact</a></li>
-          <li><a href="/PHPLINUX/PhpProject/content/?page=contact">Feedback</a></li>
+          <li><a href="#section3">About</a></li>
+          <li><a href="#section5">Contact</a></li>
+          <li><a href="#section6">Feedback</a></li>
 <!--          <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <b class="caret"></b></a>
             <ul class="dropdown-menu">
@@ -88,30 +123,43 @@
 <div class="container">
   <div class="col-sm-10 col-sm-offset-1">
     <div class="page-header text-center">
-      <h1>Welcome to best dentist site ever!</h1>
+      <h1>Thank you for choosing Dentists from another universe.</h1>
     </div>
     
     <p class="lead text-center">
-      Twitter Bootstrap is a front-end toolkit to rapidly build web applications.
+      We welcome you to our dental practice located in the heart of downtown Bratislava.
     </p>
     <p class="text-center">
-      Bootstrap is a framework that uses some of the latest browser techniques 
-      to provide you with stylish typography, navigation, buttons, tables, etc. 
-      One of the primary changes in Bootstrap 3 is an emphasis on Mobile-First responsive design. 
-      The goal is to elevate the mobile experience to a first-class citizen of the design process, 
-      because several billion mobile users is quite a large market to tap into. 
-      So, sites built with the current Bootstrap version target mobile devices and 
-      scale for larger screens depending on screen size.
+      Welcome to Dentists from another universe, a progressive dental clinic in downtown Bratislava 
+      that prides itself on expanding the boundaries of excellence in dentistry and customer service. 
+      We are always on the leading edge of technology, so that we may always offer you uncompromising 
+      care.
+
+      We want our patients to feel calm and relaxed during each general, cosmetic, and restorative 
+      treatment appointment. Our dentists and team members carefully listen to patients and provide 
+      sound advice and confident reassurance at all times. In this day and age of fast food and rushed 
+      service, we've chosen instead to keep our practice just the opposite: calm, relaxed, 
+      and incredibly comfortable. We are always accepting new patients and referrals.
+
+      We are conveniently located in the financial district of Downtown Bratislava inside J&T Building
+      in Bevanda Tower 115. We have convenient extended hours 
+      and caring team members to make your experience the best it can be!
     </p>
   </div>
 </div>
     
 <div class="divider" id="section2"></div>
-  
+<div class="container">     
+
+</div>
+
 <section class="bg-1">
-  <div class="col-sm-6 col-sm-offset-3 text-center">
+<!--  <div class="col-sm-6 col-sm-offset-3 text-center">
       <h2 style="padding:20px;background-color:rgba(5,5,5,.8)">
-          Try and Tweak Different Layouts</h2></div>
+          Try and Tweak Different Layouts</h2></div>-->
+    <?php
+    display_staffs();
+    ?>
 </section>
   
 <div class="divider"></div>
@@ -140,18 +188,32 @@
 <section class="bg-3" id="section4">
   <div class="col-sm-6 col-sm-offset-3 text-center">
       <h2 style="padding:20px;background-color:rgba(5,5,5,.8)">
-          Leverage Snippets &amp; Examples</h2></div>
+          Our Procedures</h2>
+      <p style="color:black">Our goal is to provide you with excellent care in a comfortable 
+          and relaxed environment. Toward that end, we use the most current periodontal procedures,
+          instruments, medications, and sterilization techniques.</p>
+      
+      <p style="color: black">Every procedure is done with your comfort and safety in mind. 
+          We work closely with your general dentist to ensure you get the best possible care. 
+          We want you to be completely informed of your condition and encourage you to ask 
+          any questions you may have regarding your treatment and care.</p>
+      
+      <p style="color: black">After treatment, home care and medication instructions will be 
+          thoroughly explained. For your convenience, you will also be given printed instructions.</p>
+  </div>
 </section>
   
-<div class="continer bg-4">
+<div class="container bg-4">
 	<div class="row">
 	   <div class="col-sm-4 col-xs-6">
       
         <div class="panel panel-default">
-          <div><img src="//placehold.it/620X250/565656/eee" class="img-responsive"></div>
+          <div><img src="//photo/smile.jpeg" class="img-responsive"></div>
           <div class="panel-body">
-            <p class="lead">Hacker News</p>
-            <p>120k Followers, 900 Posts</p>
+            <p class="lead">Tooth caries treatment</p>
+            <p>Dr. Lin Denvers is professional specialist with years long practice. Dangerous teeth caries
+                are her cup of tea. Her ambulance is 
+                filled with modern tools and sit chair. Her medical access to patient is soft and educational.</p>
             
             <p>
               <img src="https://lh4.googleusercontent.com/-9Yw2jNffJlE/AAAAAAAAAAI/AAAAAAAAAAA/u3WcFXvK-g8/s28-c-k-no/photo.jpg" width="28px" height="28px">
@@ -254,11 +316,25 @@
     
       <address>
         <strong>Email Us</strong><br>
-        <a href="mailto:#">dentist@example.com</a>
+        <a href="mailto:trainscheduleconfirmation@gmail.com">dentist@example.com</a>
       </address>          
   </div>
   
 </div><!--/row-->
+
+<div class="divider" id="section6"></div>
+  
+<div class="container">
+  <div class="col-sm-10 col-sm-offset-1">
+    
+    <p class="lead text-center">
+      Our feedback:
+    </p>
+    <p class="text-center">
+      blablabla
+    </p>
+  </div>
+</div>
 
 <div class="container">
   	<div class="col-sm-8 col-sm-offset-2 text-center">

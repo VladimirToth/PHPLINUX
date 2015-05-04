@@ -1,9 +1,9 @@
 <?php
 class Db {
+    private $server = "localhost";
     private $username = "root";
     private $password = "";
-    private $server = "localhost";
-    private $database = "students";
+    private $database = "dentist";
     private $link;
     public function __construct() {
         $this->link = mysqli_connect($this->server, $this->username, $this->password, $this->database) or die('Failed to connect.');

@@ -2,7 +2,7 @@
 define('DBHOST','localhost');
 define('DBUSER','root');
 define('DBPASS','');
-define('DBSELECT','students');
+define('DBSELECT','dentist');
 define('PERPAGE',3);
 
 function get_meta_data($page='index') {
@@ -135,4 +135,29 @@ echo '<li>
         echo '</ul>';
     }
 }
+
+function display_staffs() {
+    $conn = new mysqli(DBHOST, DBUSER, DBPASS, DBSELECT);
+    
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
+    
+    $sql = "SELECT * FROM staff";
+    $result = $conn->query($sql);
+    
+    if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "id: " . $row["ID"]. " - Name: " . $row["Name"]. " " . $row["JobTitle"]. 
+        $row["JobTitle"]. $row["Image"]. $row["Public"]. $row["Qualifications"]. 
+        $row["WorkingDaysandTimes"]. $row["Email"]. "<br>";
+    }
+    } else {
+        echo "0 results";
+    }
+    $conn->close();  
+}
+
 ?>
