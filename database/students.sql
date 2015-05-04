@@ -2,10 +2,10 @@
 -- version 4.2.11
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 16, 2015 at 07:23 PM
--- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- Hostiteľ: 127.0.0.1
+-- Čas generovania: Ne 03.Máj 2015, 23:26
+-- Verzia serveru: 5.6.21
+-- Verzia PHP: 5.5.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,305 +17,135 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `students`
+-- Databáza: `dentist`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `attributes`
+-- Štruktúra tabuľky pre tabuľku `appointments`
 --
 
-CREATE TABLE IF NOT EXISTS `attributes` (
-  `id_attribute` int(10) unsigned NOT NULL,
-  `id_product` int(10) unsigned DEFAULT NULL
+CREATE TABLE IF NOT EXISTS `appointments` (
+`AppID` int(11) NOT NULL,
+  `UserEmail` varchar(50) NOT NULL,
+  `ServiceID` int(11) NOT NULL,
+  `DoctorID` int(11) NOT NULL,
+  `Date` date NOT NULL,
+  `Time` time NOT NULL,
+  `Price` double NOT NULL,
+  `PaymentMethod` varchar(50) NOT NULL,
+  `PaymentDate` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `attributes`
+-- Štruktúra tabuľky pre tabuľku `services`
 --
 
-INSERT INTO `attributes` (`id_attribute`, `id_product`) VALUES
-(0, 2);
+CREATE TABLE IF NOT EXISTS `services` (
+`ServiceID` int(11) NOT NULL,
+  `ServiceName` varchar(50) NOT NULL,
+  `Description` varchar(500) NOT NULL,
+  `ServicePrice` double NOT NULL,
+  `Discount` double NOT NULL,
+  `DiscountStartDate` date NOT NULL,
+  `DiscountEndDate` date NOT NULL,
+  `Image` varchar(100) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Sťahujem dáta pre tabuľku `services`
+--
+
+INSERT INTO `services` (`ServiceID`, `ServiceName`, `Description`, `ServicePrice`, `Discount`, `DiscountStartDate`, `DiscountEndDate`, `Image`) VALUES
+(1, 'Filling', 'Placing an amalgam filling (mercury, silver and other base metals) is a typical procedure for fixing cavities.', 30, 2, '2015-08-02', '2015-05-31', 'filling.jpg'),
+(2, 'Inlays and onlays', 'Inlays and onlays are restorations used to repair teeth with mild to moderate decay or damage. They are a good solution when the area to restore is too large for a filling, yet not so extensive that a dental crown is required. ', 100, 10, '2015-08-03', '2015-08-31', 'inlays.jpg'),
+(3, 'Dental bridge', 'A dental bridge from our clinic may be suitable for you if you’re missing one or more teeth. ', 400, 40, '2015-08-03', '2015-08-31', 'dentalbridge.jpg'),
+(4, 'Dental crown', 'A dental crown (commonly known as a cap) is a dental restoration that replaces the outer surface of your tooth with ceramic material and/or gold. It is commonly used to restore a tooth when it is too damaged to support a filling, inlay or onlay. ', 150, 5, '2015-05-26', '2015-05-31', 'crown.jpg'),
+(5, 'Rooot canal therapy', 'The term ''root canal'' commonly describes the dental treatment of removing a tooth’s pulp, disinfecting the inside of the tooth, and then filling the tooth with restorative material. However, a root canal is actually a chamber inside your tooth where the pulp tissue resides.', 230, 10, '2015-08-04', '2015-08-18', 'canal.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `attributes_lang`
+-- Štruktúra tabuľky pre tabuľku `staff`
 --
 
-CREATE TABLE IF NOT EXISTS `attributes_lang` (
-  `attr_value` text,
-  `id_attribute` int(10) unsigned DEFAULT NULL,
-  `id_lang` int(10) unsigned DEFAULT NULL,
-  `name` varchar(50) DEFAULT 'noname'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `staff` (
+`ID` int(11) NOT NULL,
+  `Name` varchar(50) NOT NULL,
+  `JobTitle` varchar(50) NOT NULL,
+  `Image` varchar(100) NOT NULL,
+  `Public` varchar(500) NOT NULL,
+  `Qualifications` varchar(500) NOT NULL,
+  `WorkingDaysandTimes` varchar(100) NOT NULL,
+  `Email` varchar(50) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `attributes_lang`
+-- Sťahujem dáta pre tabuľku `staff`
 --
 
-INSERT INTO `attributes_lang` (`attr_value`, `id_attribute`, `id_lang`, `name`) VALUES
-('1kg', 0, 1, 'Vaha');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `category`
---
-
-CREATE TABLE IF NOT EXISTS `category` (
-`id_category` int(10) unsigned NOT NULL,
-  `category_name` varchar(50) DEFAULT NULL,
-  `position` int(11) DEFAULT NULL,
-  `id_parent` int(10) unsigned DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `category`
---
-
-INSERT INTO `category` (`id_category`, `category_name`, `position`, `id_parent`) VALUES
-(1, 'Camera', 2, NULL),
-(2, 'Smartphone', 1, NULL),
-(3, 'TV', 3, NULL),
-(4, 'Hi-Fi', 4, NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `category_products`
---
-
-CREATE TABLE IF NOT EXISTS `category_products` (
-  `id_cat` int(10) unsigned DEFAULT NULL,
-  `id_prod` int(10) unsigned DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `category_products`
---
-
-INSERT INTO `category_products` (`id_cat`, `id_prod`) VALUES
-(1, 2),
-(2, 2),
-(4, 1),
-(3, 2),
-(1, 3),
-(1, 4),
-(1, 6),
-(1, 8);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `eshop`
---
-
-CREATE TABLE IF NOT EXISTS `eshop` (
-`id_product` int(10) unsigned NOT NULL,
-  `price` float DEFAULT NULL,
-  `id_man` int(10) unsigned DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `eshop`
---
-
-INSERT INTO `eshop` (`id_product`, `price`, `id_man`) VALUES
-(1, 30, 1),
-(2, 40.5, 2),
-(3, 3.43, 2),
-(4, 5.6, 2),
-(5, 4.23, 2),
-(6, 5.5, 1),
-(7, 3.6, 1),
-(8, 42.5, 1),
-(9, 50, 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `eshop_lang`
---
-
-CREATE TABLE IF NOT EXISTS `eshop_lang` (
-  `id_product` int(10) unsigned DEFAULT NULL,
-  `id_lang` int(10) unsigned DEFAULT NULL,
-  `description` text CHARACTER SET latin2 COLLATE latin2_czech_cs,
-  `name` varchar(50) CHARACTER SET latin2 COLLATE latin2_czech_cs DEFAULT 'noname'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `eshop_lang`
---
-
-INSERT INTO `eshop_lang` (`id_product`, `id_lang`, `description`, `name`) VALUES
-(1, 1, 'Fotak 50x50. 4m dlhy', 'Raw'),
-(2, 1, 'Fotak 100mm. 5m dlhy', 'Raw2'),
-(3, 1, 'Fotak 120mm. 5m dlhy', 'Raw3'),
-(4, 1, 'Fotak 140mm. 5m dlhy', 'Raw4'),
-(5, 1, 'Fotak 150mm. 5m dlhy', 'Raw5'),
-(6, 1, 'Fotak 200mm. 5m dlhy', 'Raw6'),
-(7, 1, 'Fotak 300mm. 5m dlhy', 'Raw7'),
-(8, 1, 'Fotak 500mm. 5m dlhy', 'Raw8'),
-(9, 1, 'Fotak 1000mm. 5m dlhy', 'Raw9');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `languages`
---
-
-CREATE TABLE IF NOT EXISTS `languages` (
-`id_lang` int(10) unsigned NOT NULL,
-  `name` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `languages`
---
-
-INSERT INTO `languages` (`id_lang`, `name`) VALUES
-(1, 'Slovak'),
-(2, 'English'),
-(3, 'German'),
-(4, 'Spanish');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `manufacture`
---
-
-CREATE TABLE IF NOT EXISTS `manufacture` (
-`id_man` int(10) unsigned NOT NULL,
-  `name` varchar(50) DEFAULT NULL,
-  `dateadd` datetime DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `manufacture`
---
-
-INSERT INTO `manufacture` (`id_man`, `name`, `dateadd`) VALUES
-(1, 'NIKON', '2015-02-25 19:16:41'),
-(2, 'APPLE', '2015-02-25 19:16:41');
+INSERT INTO `staff` (`ID`, `Name`, `JobTitle`, `Image`, `Public`, `Qualifications`, `WorkingDaysandTimes`, `Email`) VALUES
+(1, 'Dr. Andrej Kolesik', 'Dentist', 'kolesik.jpg', '0902123456', 'He completed his undergraduate studies at the University of Bratislava. He then graduated from Bratislava University School of Dental Medicine, before being accepted into the post-graduate training program in General Dentistry at UCLA.', 'Monday - Friday\r\n08.00 - 12.00', 'kolesik@dentist.sk'),
+(2, 'Dr. Jana Tomanova', 'Dentist', 'tomanova.jpg', '0942157326', 'Dr. Tomanova is a general dentist in Bratislava who has been practicing general dentistry and offering cosmetic dental treatment for over 25 years.\r\n\r\nShe completed her undergraduate studies at the University of Prague. She then graduated from Bratislava University School of Dental Medicine,', 'Monday - Friday\r\n13.00 - 18.00', 'tomanova@dentist.sk'),
+(3, 'Aneta Jakubcova', 'Office coordinator', 'jakubcova.jpg', '', '', '', 'jakubcova@dentist.sk'),
+(4, 'Monika Benova', 'Hygienist', 'benova.img', '', '', 'Monday-Friday\r\n08.00 - 12.00', 'benova@dentist.sk'),
+(5, 'Alena Radicova', 'Hygienist', 'radicova.jpg', '', '', 'Monday-Friday\r\n13.00 - 18.00', 'radicova@dentist.sk');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `attributes`
+-- Indexes for table `appointments`
 --
-ALTER TABLE `attributes`
- ADD PRIMARY KEY (`id_attribute`), ADD KEY `id_product` (`id_product`);
+ALTER TABLE `appointments`
+ ADD PRIMARY KEY (`AppID`), ADD KEY `doctor_id_fk` (`DoctorID`), ADD KEY `service_id_fk` (`ServiceID`);
 
 --
--- Indexes for table `attributes_lang`
+-- Indexes for table `services`
 --
-ALTER TABLE `attributes_lang`
- ADD KEY `id_attribute` (`id_attribute`), ADD KEY `id_lang` (`id_lang`);
+ALTER TABLE `services`
+ ADD PRIMARY KEY (`ServiceID`), ADD UNIQUE KEY `Service ID` (`ServiceID`);
 
 --
--- Indexes for table `category`
+-- Indexes for table `staff`
 --
-ALTER TABLE `category`
- ADD PRIMARY KEY (`id_category`), ADD UNIQUE KEY `position` (`position`);
-
---
--- Indexes for table `category_products`
---
-ALTER TABLE `category_products`
- ADD KEY `id_cat` (`id_cat`), ADD KEY `id_prod` (`id_prod`);
-
---
--- Indexes for table `eshop`
---
-ALTER TABLE `eshop`
- ADD PRIMARY KEY (`id_product`), ADD KEY `id_man` (`id_man`);
-
---
--- Indexes for table `eshop_lang`
---
-ALTER TABLE `eshop_lang`
- ADD KEY `id_product` (`id_product`), ADD KEY `id_lang` (`id_lang`);
-
---
--- Indexes for table `languages`
---
-ALTER TABLE `languages`
- ADD PRIMARY KEY (`id_lang`);
-
---
--- Indexes for table `manufacture`
---
-ALTER TABLE `manufacture`
- ADD PRIMARY KEY (`id_man`);
+ALTER TABLE `staff`
+ ADD PRIMARY KEY (`ID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `category`
+-- AUTO_INCREMENT for table `appointments`
 --
-ALTER TABLE `category`
-MODIFY `id_category` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+ALTER TABLE `appointments`
+MODIFY `AppID` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `eshop`
+-- AUTO_INCREMENT for table `services`
 --
-ALTER TABLE `eshop`
-MODIFY `id_product` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+ALTER TABLE `services`
+MODIFY `ServiceID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT for table `languages`
+-- AUTO_INCREMENT for table `staff`
 --
-ALTER TABLE `languages`
-MODIFY `id_lang` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+ALTER TABLE `staff`
+MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT for table `manufacture`
---
-ALTER TABLE `manufacture`
-MODIFY `id_man` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- Constraints for dumped tables
+-- Obmedzenie pre exportované tabuľky
 --
 
 --
--- Constraints for table `attributes`
+-- Obmedzenie pre tabuľku `appointments`
 --
-ALTER TABLE `attributes`
-ADD CONSTRAINT `attributes_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `eshop` (`id_product`);
-
---
--- Constraints for table `attributes_lang`
---
-ALTER TABLE `attributes_lang`
-ADD CONSTRAINT `attributes_lang_ibfk_1` FOREIGN KEY (`id_attribute`) REFERENCES `attributes` (`id_attribute`),
-ADD CONSTRAINT `attributes_lang_ibfk_2` FOREIGN KEY (`id_lang`) REFERENCES `languages` (`id_lang`);
-
---
--- Constraints for table `category_products`
---
-ALTER TABLE `category_products`
-ADD CONSTRAINT `category_products_ibfk_1` FOREIGN KEY (`id_cat`) REFERENCES `category` (`id_category`),
-ADD CONSTRAINT `category_products_ibfk_2` FOREIGN KEY (`id_prod`) REFERENCES `eshop` (`id_product`);
-
---
--- Constraints for table `eshop`
---
-ALTER TABLE `eshop`
-ADD CONSTRAINT `eshop_ibfk_1` FOREIGN KEY (`id_man`) REFERENCES `manufacture` (`id_man`);
-
---
--- Constraints for table `eshop_lang`
---
-ALTER TABLE `eshop_lang`
-ADD CONSTRAINT `eshop_lang_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `eshop` (`id_product`),
-ADD CONSTRAINT `eshop_lang_ibfk_2` FOREIGN KEY (`id_lang`) REFERENCES `languages` (`id_lang`);
+ALTER TABLE `appointments`
+ADD CONSTRAINT `doctor_id_fk` FOREIGN KEY (`DoctorID`) REFERENCES `staff` (`ID`),
+ADD CONSTRAINT `service_id_fk` FOREIGN KEY (`ServiceID`) REFERENCES `services` (`ServiceID`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
