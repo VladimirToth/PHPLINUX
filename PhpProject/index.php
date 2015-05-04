@@ -3,6 +3,7 @@
 <html lang="en">
 	<head>
 	<?php
+        include("functions.php");
 //    if(isset($_GET['page'])) {
 //        switch($_GET['page']) {
 //            case "about":
@@ -17,44 +18,16 @@
 //        $page="index";
 //    }
     include("/libraries/views/head.php");
+    
     ?>
 	</head>
 	<body>
 <!-- Wrap all page content here -->
 
-<?php
-define('DBHOST','localhost');
-define('DBUSER','root');
-define('DBPASS','');
-define('DBSELECT','dentist');
-define('PERPAGE',3);
 
-function display_staffs() {
-    $conn = new mysqli(DBHOST, DBUSER, DBPASS, DBSELECT);
-    
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    } 
-    
-    $sql = "SELECT * FROM staff";
-    $result = $conn->query($sql);
-    
-    if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["ID"]. " - Name: " . $row["Name"]. " " . $row["JobTitle"]. 
-                " " .$row["JobTitle"]. " " .$row["Image"]. " " .$row["Public"]. 
-                " " .$row["Qualifications"]. " " .$row["WorkingDaysandTimes"]. " " .
-                $row["Email"]. "<br>";
-    }
-    } else {
-        echo "0 results";
-    }
-    $conn->close();  
-}
 
-?>
+
+
 
 <div id="wrap">
   
@@ -157,9 +130,8 @@ function display_staffs() {
 <!--  <div class="col-sm-6 col-sm-offset-3 text-center">
       <h2 style="padding:20px;background-color:rgba(5,5,5,.8)">
           Try and Tweak Different Layouts</h2></div>-->
-    <?php
-    display_staffs();
-    ?>
+<?php display_staffs();
+?>
 </section>
   
 <div class="divider"></div>
