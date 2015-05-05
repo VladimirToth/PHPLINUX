@@ -12,7 +12,13 @@
     
     <body>
       <h1>About us</h1>
-          <h2>We believe your visit to the dental practice should be a pleasure rather than a chore.  From entering the practice until the moment you leave, our aim is to deliver a dental experience that you will feel is first class. We aim to excel in everything we do to meet all your dental needs, leaving you with a confident, healthy and happy smile. From a relaxing, comfortable environment whilst you wait for your appointment to our high quality surgeries and a friendly, approachable team your experience is of utmost importance to us.</h2>
+          <h2>We believe your visit to the dental practice should be a pleasure rather than a chore.  
+              From entering the practice until the moment you leave, our aim is to deliver a dental 
+              experience that you will feel is first class. We aim to excel in everything we do to meet 
+              all your dental needs, leaving you with a confident, healthy and happy smile. 
+              From a relaxing, comfortable environment whilst you wait for your appointment to our high 
+              quality surgeries and a friendly, approachable team your experience is of utmost 
+              importance to us.</h2>
         
           <p><img class="img-right" src="../images/about-image.jpg">We have a fundamental belief in providing high quality dentistry, using excellent materials and dental laboratories at a fair price.  Being a member of our practice brings additional benefits, reducing the cost of any treatment you may require and saving on your everyday shopping through our perks scheme too!</p>
 
