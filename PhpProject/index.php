@@ -31,15 +31,16 @@
 
 <div id="wrap">
   
-<header class="masthead">
-    <div class="container">
+<!--<header class="masthead">-->
+    <header>
+<!--    <div class="container">
     <div class="row">
       <div class="col-sm-6">
         <h1><a href="#" title="Our page">Dentist</a>
           <p class="lead">{A dentist from another universe}</p></h1>
       </div>
       <div class="col-sm-6">
-<!--        <div class="pull-right  hidden-xs">    
+        <div class="pull-right  hidden-xs">    
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><h3>
             <i class="glyphicon glyphicon-cog"></i></h3></a>
           <ul class="dropdown-menu">
@@ -48,13 +49,11 @@
               <li><a href="#"><i class="glyphicon glyphicon-lock"></i> Link</a></li>
               <li><a href="#"><i class="glyphicon glyphicon-cog"></i> Link</a></li>
           </ul>
-        </div>-->
+        </div>
       </div>
     </div>
-    </div>
-</header>
-  
-  
+    </div>-->
+
 <!-- Fixed navbar -->
 <div class="navbar navbar-custom navbar-inverse navbar-static-top" id="nav">
     <div class="container">
@@ -89,31 +88,97 @@
       </div><!--/.nav-collapse -->
     </div><!--/.container -->
 </div><!--/.navbar -->
-  
+    </header>
+
+<script src="web/jssor/js/jquery-2.1.3.js"></script>
+<script src="web/js/bootstrap.min.js"></script>
+  <div class="container">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+        <img src="web/jssor/img/home/01.jpg" alt="First" width="460" height="345">
+        <div class="carousel-caption">
+          <h3>First</h3>
+          <p>This is the first ever picture in my carousel.</p>
+        </div>
+      </div>
+
+    <div class="item">
+        <img src="web/jssor/img/home/02.jpg" alt="Second" width="460" height="345">
+        <div class="carousel-caption">
+          <h3>Second</h3>
+          <p>Hi, this si the second picture in carousel.</p>
+        </div>
+      </div>
+
+    <div class="item">
+        <img src="web/jssor/img/home/03.jpg" alt="Third" width="460" height="345">
+        <div class="carousel-caption">
+          <h3>Third</h3>
+          <p>Hi, this si the third picture in carousel.</p>
+        </div>
+      </div>
+
+    <div class="item">
+        <img src="web/jssor/img/home/04.jpg" alt="Fourth" width="460" height="345">
+        <div class="carousel-caption">
+          <h3>Fourth</h3>
+          <p>Hi, this si the fourth picture in carousel.</p>
+        </div>
+      </div>
+  </div>
+ <style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 100%;
+      margin: inherit;
+  }
+  </style>
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
 <!-- Begin page content -->
 <div class="divider" id="section1"></div>
   
-<div class="container">
+<div class="container" id="section1">
   <div class="col-sm-10 col-sm-offset-1">
     <div class="page-header text-center">
       <h1>Thank you for choosing Dentists from another universe.</h1>
     </div>
-    
+   
     <p class="lead text-center">
       We welcome you to our dental practice located in the heart of downtown Bratislava.
     </p>
-    <p class="text-center">
+    <p class="text-justify">
       Welcome to Dentists from another universe, a progressive dental clinic in downtown Bratislava 
       that prides itself on expanding the boundaries of excellence in dentistry and customer service. 
       We are always on the leading edge of technology, so that we may always offer you uncompromising 
-      care.
-
+      care.</p></br>
+    <p class="text-justify">
       We want our patients to feel calm and relaxed during each general, cosmetic, and restorative 
       treatment appointment. Our dentists and team members carefully listen to patients and provide 
       sound advice and confident reassurance at all times. In this day and age of fast food and rushed 
       service, we've chosen instead to keep our practice just the opposite: calm, relaxed, 
       and incredibly comfortable. We are always accepting new patients and referrals.
-
+    </p></br>
+    <p class="text-justify">
       We are conveniently located in the financial district of Downtown Bratislava inside J&T Building
       in Bevanda Tower 115. We have convenient extended hours 
       and caring team members to make your experience the best it can be!
@@ -318,22 +383,22 @@
 </div><!--/wrap-->
 
 <div id="footer">
-  <div class="container">
     <?php
         include("/libraries/views/footer.php");
         ?>
-  </div>
 </div>
 
 <ul class="nav pull-right scroll-top">
-  <li><a href="#" title="Scroll to top"><i class="glyphicon glyphicon-chevron-up"></i></a></li>
+  <li><a href="#" title="Scroll to top">UP</a></li>
 </ul>
 
 	<!-- script references -->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		
                 <script src="web/js/bootstrap.min.js"></script>
 		<script src="http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js&output=embed"></script>
                 <script src="web/js/scripts.js"></script>
+               
+               
 	</body>
 </html>
 
