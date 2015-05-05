@@ -3,6 +3,7 @@
 <html lang="en">
 	<head>
 	<?php
+        include("functions.php");
 //    if(isset($_GET['page'])) {
 //        switch($_GET['page']) {
 //            case "about":
@@ -17,10 +18,17 @@
 //        $page="index";
 //    }
     include("/libraries/views/head.php");
+    
     ?>
 	</head>
 	<body>
 <!-- Wrap all page content here -->
+
+
+
+
+
+
 <div id="wrap">
   
 <!--<header class="masthead">-->
@@ -179,12 +187,16 @@
 </div>
     
 <div class="divider" id="section2"></div>
-  
+<div class="container">     
+
+</div>
+
 <section class="bg-1">
-  <div class="col-sm-6 col-sm-offset-3  text-center">
-<!--      <h2 style="padding:20px;background-color:rgba(5,5,5,.8)">
-          Try and Tweak Different Layouts</h2>-->
-  </div>
+<!--  <div class="col-sm-6 col-sm-offset-3 text-center">
+      <h2 style="padding:20px;background-color:rgba(5,5,5,.8)">
+          Try and Tweak Different Layouts</h2></div>-->
+<?php display_staffs();
+?>
 </section>
   
 <div class="divider"></div>
@@ -216,7 +228,7 @@
           Leverage Snippets &amp; Examples</h2></div>
 </section>
   
-<div class="continer bg-4">
+<div class="container bg-4">
 	<div class="row">
 	   <div class="col-sm-4 col-xs-6">
       
