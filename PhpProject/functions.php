@@ -186,4 +186,3 @@ function display_row($row) {  ?>
         </table>
     </div>
 <?php } ?>
-?>
