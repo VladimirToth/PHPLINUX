@@ -208,16 +208,13 @@ function display_staffs() {
 	   <div class="col-sm-4 col-xs-6">
       
         <div class="panel panel-default">
-          <div><img src="//photo/smile.jpeg" class="img-responsive"></div>
+          <div><img src="filling.jpg" class="img-responsive"></div>
           <div class="panel-body">
-            <p class="lead">Tooth caries treatment</p>
-            <p>Dr. Lin Denvers is professional specialist with years long practice. Dangerous teeth caries
-                are her cup of tea. Her ambulance is 
-                filled with modern tools and sit chair. Her medical access to patient is soft and educational.</p>
+            <p class="lead">Filling</p>
+            <p>Placing an amalgam filling (mercury, silver and other base metals) 
+                is a typical procedure for fixing cavities.</p>
             
-            <p>
-              <img src="https://lh4.googleusercontent.com/-9Yw2jNffJlE/AAAAAAAAAAI/AAAAAAAAAAA/u3WcFXvK-g8/s28-c-k-no/photo.jpg" width="28px" height="28px">
-            </p>
+            
           </div>
         </div><!--/panel-->
       </div><!--/col-->
@@ -225,15 +222,16 @@ function display_staffs() {
       <div class="col-sm-4 col-xs-6">
       
       	<div class="panel panel-default">
-          <div class="panel-thumbnail"><img src="//placehold.it/620X250/ffcc33/444" 
+          <div class="panel-thumbnail"><img src="inlay_onlay.jpg" 
                                             class="img-responsive"></div>
           <div class="panel-body">
-            <p class="lead">Bootstrap Templates</p>
-            <p>902 Followers, 88 Posts</p>
+            <p class="lead">Inlays and onlays</p>
+            <p>Inlays and onlays are restorations used to repair teeth with mild to 
+                moderate decay or damage. They are a good solution when the area to 
+                restore is too large for a filling, yet not so extensive that a dental 
+                crown is required. </p>
             
-            <p>
-              <img src="https://lh5.googleusercontent.com/-AQznZjgfM3E/AAAAAAAAAAI/AAAAAAAAABA/WEPOnkQS_20/s28-c-k-no/photo.jpg" width="28px" height="28px">
-            </p>
+            
           </div>
         </div><!--/panel--> 
       </div><!--/col-->
@@ -241,21 +239,38 @@ function display_staffs() {
       <div class="col-sm-4 col-xs-6">
       
       	<div class="panel panel-default">
-          <div class="panel-thumbnail"><img src="//placehold.it/620X250/f16251/444" 
+          <div class="panel-thumbnail"><img src="bridge.jpg" 
                                             class="img-responsive"></div>
           <div class="panel-body">
-            <p class="lead">Social Media</p>
-            <p>19k Followers, 789 Posts</p>
+            <p class="lead">Dental bridge</p>
+            <p>A dental bridge from our clinic may be suitable for you if you’re missing one or more teeth. </p>
             
-            <p>
-              <img src="https://lh4.googleusercontent.com/-eSs1F2O7N1A/AAAAAAAAAAI/AAAAAAAAAAA/caHwQFv2RqI/s28-c-k-no/photo.jpg" width="28px" height="28px">
-              <img src="https://lh4.googleusercontent.com/-9Yw2jNffJlE/AAAAAAAAAAI/AAAAAAAAAAA/u3WcFXvK-g8/s28-c-k-no/photo.jpg" width="28px" height="28px">
-            </p>
+            
           </div>
         </div><!--/panel--> 
 
       </div><!--/col--> 
 	</div><!--/row-->
+        
+        <div class="col-sm-4 col-xs-6">
+      
+      	<div class="panel panel-default">
+          <div class="panel-thumbnail"><img src="crown.jpg" 
+                                            class="img-responsive"></div>
+          <div class="panel-body">
+            <p class="lead">Dental crown</p>
+            <p>A dental crown (commonly known as a cap) is a dental restoration that 
+                replaces the outer surface of your tooth with ceramic material and/or gold. 
+                It is commonly used to restore a tooth when it is too damaged to support a 
+                filling, inlay or only.  </p>
+            
+          </div>
+        </div><!--/panel--> 
+
+      </div><!--/col--> 
+	</div><!--/row-->
+        
+
 </div><!--/container-->
 
 <div class="divider" id="section5"></div>
