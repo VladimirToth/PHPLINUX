@@ -3,7 +3,8 @@
 html,
 body {
   height: 100%;
-  /* The html and body elements cannot have any padding or margin. */
+  /* The html and body elements cannot have any padding or mar
+  /* The html and body elements cgin. */
   -webkit-font-smoothing: antialiased;
   font: normal 14px arial,sans-serif;
 }
@@ -58,7 +59,9 @@ h1,h2,h3,h4 {
 
 header {
   background: #f16251;
-  height:550px;
+/*  opacity: 0.5; 
+  filter: alpha(opacity=50);*/
+  height:150px;
   color:#000000;
 }
 
@@ -214,3 +217,30 @@ section {
 	padding-top:30px;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(20,20,20,0.2)),to(rgba(255,255,255,0)), color-stop(1,#000));
 }
+
+                /* jssor slider arrow navigator skin 11 css */
+                /*
+                .jssora11l                  (normal)
+                .jssora11r                  (normal)
+                .jssora11l:hover            (normal mouseover)
+                .jssora11r:hover            (normal mouseover)
+                .jssora11l.jssora11ldn      (mousedown)
+                .jssora11r.jssora11rdn      (mousedown)
+                */
+                .jssora11l, .jssora11r {
+                    display: block;
+                    position: absolute;
+                    /* size of arrow element */
+                    width: 37px;
+                    height: 37px;
+                    cursor: pointer;
+                    background: url(web/jssor/img/a11.png) no-repeat;
+                    overflow: hidden;
+                }
+                .jssora11l { background-position: -11px -41px; }
+                .jssora11r { background-position: -71px -41px; }
+                .jssora11l:hover { background-position: -131px -41px; }
+                .jssora11r:hover { background-position: -191px -41px; }
+                .jssora11l.jssora11ldn { background-position: -251px -41px; }
+                .jssora11r.jssora11rdn { background-position: -311px -41px; }
+       
