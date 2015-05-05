@@ -160,14 +160,19 @@ function display_staffs() {
 }
 function display_row($row) {  ?>
     <div class="header">
-        <h2> <?=$row['Name']; ?> </h2>
+        <table>
+            <tr>
+                <td><h2> <?=$row['Name']; ?> </h2></td>
+                <td><h2><?=$row['JobTitle'];?></h2></td>
+            </tr>
+        </table>
+        
     </div>
  
     <div class="staff-detail">
         <table>
             <tr>
-                <th rowspan="4"><img src="<?=$row['Image'];?>" class="img-circle"/></th>
-                <td><?=$row['JobTitle'];?></td>
+                <th rowspan="4"><img src="<?=$row['Image'];?>" class="img-circle"/></th> 
             </tr>
             <tr>
               <td><?=$row['Qualifications'];?></td>
