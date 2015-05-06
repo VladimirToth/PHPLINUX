@@ -65,7 +65,7 @@
           <li><a href="#section2">Our Staff</a></li>
           <li><a href="appointment.php">Appointment</a></li>
           <li class="active"><a href="#section1"><strong>Welcome</strong></a></li>
-          <li><a href="panorama_viewer-master/demo/demo.html">About</a></li>
+          <li><a href="#section3">About</a></li>
           <li><a href="#section5">Contact</a></li>
           <li><a href="#section6">Feedback</a></li>
 <!--          <li class="dropdown">
