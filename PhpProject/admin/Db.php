@@ -4,7 +4,7 @@ class Db {
     private $username = "root";
     private $password = "";
     private $server = "localhost";
-    private $database = "students";
+    private $database = "dentist";
     private $link;
 
     public function __construct() {

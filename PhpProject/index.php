@@ -18,19 +18,13 @@
 //        $page="index";
 //    }
     include("/libraries/views/head.php");
-    
     ?>
-	</head>
-	<body>
+        </head>
+        <body>
 <!-- Wrap all page content here -->
 
-
-
-
-
-
 <div id="wrap">
-  
+ 
 <!--<header class="masthead">-->
     <header>
 <!--    <div class="container">
@@ -69,7 +63,7 @@
         <ul class="nav navbar-nav nav-justified">
           <li><a href="#section4">Offers</a></li>
           <li><a href="#section2">Our Staff</a></li>
-          <li><a href="#">Appointment</a></li>
+          <li><a href="appointment.php">Appointment</a></li>
           <li class="active"><a href="#section1"><strong>Welcome</strong></a></li>
           <li><a href="#section3">About</a></li>
           <li><a href="#section5">Contact</a></li>
@@ -153,7 +147,7 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-</div>
+</div> 
 <!-- Begin page content -->
 <div class="divider" id="section1"></div>
   
@@ -164,24 +158,24 @@
     </div>
    
     <p class="lead text-center">
-      We welcome you to our dental practice located in the heart of downtown Bratislava.
+        We welcome you to our dental practice located in the heart of downtown <mark>Bratislava</mark>.
     </p>
     <p class="text-justify">
-      Welcome to Dentists from another universe, a progressive dental clinic in downtown Bratislava 
-      that prides itself on expanding the boundaries of excellence in dentistry and customer service. 
+        Welcome to <mark>Dentists from another universe</mark>, a progressive dental clinic in downtown Bratislava 
+        that prides itself on expanding the boundaries of <mark>excellence in dentistry</mark> and <mark>customer service</mark>. 
       We are always on the leading edge of technology, so that we may always offer you uncompromising 
       care.</p></br>
     <p class="text-justify">
       We want our patients to feel calm and relaxed during each general, cosmetic, and restorative 
-      treatment appointment. Our dentists and team members carefully listen to patients and provide 
+      treatment appointment. Our dentists and team members <mark>carefully listen to patients</mark> and provide 
       sound advice and confident reassurance at all times. In this day and age of fast food and rushed 
-      service, we've chosen instead to keep our practice just the opposite: calm, relaxed, 
-      and incredibly comfortable. We are always accepting new patients and referrals.
+      service, we've chosen instead to keep our practice just the opposite: <mark>calm, relaxed, 
+      and incredibly comfortable</mark>. We are always accepting new patients and referrals.
     </p></br>
     <p class="text-justify">
       We are conveniently located in the financial district of Downtown Bratislava inside J&T Building
       in Bevanda Tower 115. We have convenient extended hours 
-      and caring team members to make your experience the best it can be!
+      and caring team members to make your experience <mark>the best it can be!</mark>
     </p>
   </div>
 </div>

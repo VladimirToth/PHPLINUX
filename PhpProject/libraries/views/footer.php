@@ -3,7 +3,7 @@
     <p class="text-muted">Hello to our footer</p>
   </div>
 <div class="center-block">
-    <p>Center block</p>
+    <p class="text-muted">Center block</p>
 </div>
 <div class="pull-right">
     <p>Right container</p>
