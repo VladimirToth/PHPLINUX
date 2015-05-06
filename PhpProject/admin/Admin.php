@@ -1,13 +1,16 @@
 <?php
 include_once "Db.php";
-
 class Admin
 {
     private $adminUsername = 'admin';
     private $adminPassword = 'admin';
     private $errors = array();
+// HEAD
     private $baseUrl = 'http://localhost/PHPLINUX/PhpProject/#section1/admin/';
 
+//=======
+    private $baseUrl = 'http://localhost/aptech/web/admin/';
+//>>>>>>> origin/master
     public function __construct() {
         if(!$this->isAdmin()) {
             $this->checkAdmin();
@@ -16,10 +19,8 @@ class Admin
             $this->displayPage();
         }
     }
-
     private function displayPage() {
         $page = !isset($_GET['page']) ? 'products' : $_GET['page'];
-
         $this->displayNav();
         switch($page) {
             case 'products':
@@ -41,13 +42,10 @@ class Admin
             default:
                 $this->displayProducts();
         }
-
     }
-
     private function editProduct() {
         if(isset($_GET['id'])) {
             $db = new Db();
-
             if(isset($_POST['name']) && isset($_POST['description']) && isset($_POST['price'])) {
                 $db->query("
                     UPDATE eshop_lang SET
@@ -67,7 +65,6 @@ class Admin
                     WHERE id = ".$_POST['id_cat_pro'].";
                 ");
             }
-
             $products = $db->query("
             SELECT products.*, pl.description, pl.name, cp.id_cat AS id_category, pl.id_lang, pl.id AS plid, cp.id AS id_cat_pro
             FROM eshop AS products
@@ -77,8 +74,6 @@ class Admin
             $product = mysqli_fetch_assoc($products);
             $optionMan = $this->getOptions($product['id_man'],'manufacture','id_man','name');
             $optionCat = $this->getOptions($product['id_category'],'category','id_category','category_name');
-
-
             echo '
                 <form method="post" action="?page=editproduct&id='.$_GET['id'].'">
                     <table>
@@ -114,7 +109,6 @@ class Admin
             $this->displayErrors();
         }
     }
-
     private function addProduct() {
         if(isset($_POST['price']) && isset($_POST['description']) && isset($_POST['name'])) {
             $price = (float)$_POST['price'];
@@ -124,7 +118,6 @@ class Admin
             $language = $_POST['languages'];
             $category = $_POST['category'];
             $db = new Db();
-
             // vlozit produkt
             $db->query("INSERT INTO eshop(price,id_man)
             VALUES ($price,$manufacturer);");
@@ -140,10 +133,8 @@ class Admin
             ");
         }
     }
-
     private function getOptions($idSelected = '', $tableName, $idColName, $colValueName) {
         $db = new Db();
-
         $categories = $db->query("SELECT * FROM $tableName");
         $optionCat = "";
         while($category = mysqli_fetch_array($categories,MYSQL_ASSOC)){
@@ -154,10 +145,8 @@ class Admin
                 :
                 '').">".$category[$colValueName]."</option>";
         }
-
         return $optionCat;
     }
-
     private function  displayAddProduct() {
         // zobrazit formular pre
         // 1. cena
@@ -165,12 +154,9 @@ class Admin
         // 3. dropdown s jazykmi
         // 4. description
         // 5. name
-
         $optionMan = $this->getOptions('','manufacture','id_man','name');
         $optionLan = $this->getOptions('','languages','id_lang','name');
         $optionCat = $this->getOptions('','category','id_category','category_name');
-
-
         echo '
             <form method="post" action="?page=addproduct">
             <input type="text" name="price" placeholder="cena"/>
@@ -189,7 +175,6 @@ class Admin
             </form>
         ';
     }
-
     private function displayProducts() {
         $db = new Db();
         $products = $db->query("
@@ -197,7 +182,6 @@ class Admin
             FROM eshop AS products
             LEFT JOIN eshop_lang AS pl ON products.id_product = pl.id_product
         ");
-
         echo '<div>
         <a href="?page=addproduct" class="btn btn-primary">Add product</a>
         </div>';
@@ -225,7 +209,6 @@ class Admin
         }
         echo '</table>';
     }
-
     private function displayNav() {
         echo '
         <a href="?page=products" class="btn btn-primary">Products</a>
@@ -233,7 +216,6 @@ class Admin
         <a href="?page=logout" class="btn btn-primary">Log out</a>
         ';
     }
-
     private function displayErrors() {
         foreach($this->errors as $error) {
             echo '<div class="alert alert-danger" role="alert">
@@ -242,7 +224,6 @@ class Admin
             </div>';
         }
     }
-
     private function checkAdmin() {
         if(isset($_POST['username']) && isset($_POST['password'])) {
             if($_POST['username'] == $this->adminUsername
@@ -255,7 +236,6 @@ class Admin
             }
         }
     }
-
     private function isAdmin() {
         if(!isset($_SESSION['admin'])){
             return false;
@@ -267,7 +247,6 @@ class Admin
             }
         }
     }
-
     private function displayLogin() {
         echo '
             <div class="row">
@@ -293,6 +272,5 @@ class Admin
             </div>
         ';
     }
-
 }
 new Admin();
