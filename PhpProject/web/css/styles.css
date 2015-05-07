@@ -190,7 +190,7 @@ section {
 }
 
 .bg-1 {
-	background: url("../../images/bg.jpg") no-repeat center center fixed; 
+	background: url("../../images/staffs/bg.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
