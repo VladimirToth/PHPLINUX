@@ -2,8 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Dentist Clinic Panorama</title>
-	<meta name="title" content="Dentist Clinic Panorama" />
+        <title>Dentist Clinic Panorama</title>
 	<meta name="description" content="Embed your panorama photos on your site with jQuery Panorama Viewer" />
 	<link rel="image_src" href="/images/panorama_viewer_image.png" />
 
@@ -17,6 +16,10 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script type="text/javascript" src="jquery.panorama_viewer.js"></script>
   <link href='panorama_viewer.css' rel='stylesheet' type='text/css'>
+  <link href="web/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link href="web/css/styles.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="web/js/bootstrap.min.js"></script>
   <style>
     html {
       height: 100%;
@@ -220,12 +223,13 @@
       -webkit-box-sizing: border-box;
       background:#f5f5f5;
       font-weight: bold;
-      font-size: 13px;
+      font-size: 14px;
       color: #888;
       -webkit-transition: all 200ms ease-out;
       -moz-transition: all 200ms ease-out;
       -o-transition: all 200ms ease-out;
       transition: all 200ms ease-out;
+      float: none;
     }
     .back:hover {
       background: #eee;
@@ -259,6 +263,60 @@
       -moz-box-sizing: border-box;
       float: right;
     }
+    #nav {
+  width: 100%;
+  position:static;
+  top:-32px;
+}
+
+#nav.affix {
+   position: fixed;
+   top: 0;
+   z-index:10;
+   -webkit-transition: all .6s ease-in-out;
+}
+
+#footer > .container {
+  
+}
+
+@media (min-width: 767px) {
+  .navbar-nav.nav-justified > li{
+      float:none;
+  }
+}
+.navbar-nav {
+  margin: 1px 1px; 
+}  
+  
+/* customize nav style */
+.navbar-custom {
+    background-color: #2e2e2e;
+	font-weight:700;
+    text-transform:uppercase;
+    border-width:0;
+}
+.navbar-custom  .navbar-nav>li>a {
+	color: #ddd;
+}
+.navbar-custom  .navbar-nav li>a:hover, .navbar-nav li .open, .navbar-custom .navbar-nav .active a  {
+	background-color: #000;
+}
+.navbar-custom .dropdown-menu{
+	right:0;
+}
+.navbar-custom .navbar-nav>.dropdown>a .caret {
+	border-top-color: #999;
+	border-bottom-color: #999;
+}
+
+.navbar-collapse.in { /*3.0.2 bug workaround*/
+    overflow-y: visible;
+}
+
+.navbar-toggle {
+	outline:0;
+}
     
 	</style>
 	<script>
@@ -272,20 +330,57 @@
 	</script>
 </head>
 <body>
+
   <div class="wrapper">
 	  <div class="main">
 	    <div class="header">
     	  </div>
       <div class="panorama">
-  	   <img src="demo_photo.jpg">
+  	   <img alt="Dentist office photo" src="demo_photo.jpg">
   	   <div class="credit">
-  	     Photo by curved lense
+  	     Photo by Peter Hanak
   	   </div>
   	  </div>
+          </div>
+ <div class="back">
+   <!-- <a class="back" href="/PHPLINUX/PhpProject/index.php">Back to Main page</a>-->
+       <!-- Fixed navbar -->
+<div class="navbar navbar-custom navbar-inverse navbar-static-top" id="nav">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" 
+                data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav nav-justified">
+          <li><a href="/PHPLINUX/PhpProject/index.php#section4">Offers</a></li>
+          <li><a href="/PHPLINUX/PhpProject/index.php#section2">Our Staff</a></li>
+          <li><a href="/PHPLINUX/PhpProject/appointment.php">Appointment</a></li>
+          <li class="active"><a href="/PHPLINUX/PhpProject/index.php#section1"><strong>Welcome</strong></a></li>
+          <li><a href="/PHPLINUX/PhpProject/index.php#section3">About</a></li>
+          <li><a href="/PHPLINUX/PhpProject/index.php#section5">Contact</a></li>
+          <li><a href="/PHPLINUX/PhpProject/index.php#section6">Feedback</a></li>
+<!--          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>-->
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div><!--/.container -->
+</div><!--/.navbar -->
     </div>
-    <a class="back" href="/PHPLINUX/PhpProject/index.php">Back to Main page</a>
   </div>
   
- 
+ <script src="web/js/scripts.js"></script>
 </body>
 </html>

@@ -99,7 +99,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-        <img src="images/slider/01.jpg" alt="First" width="460" height="345">
+        <img src="images/slider/01.jpg" alt="First" width="inherit" height="145">
         <div class="carousel-caption">
           <h3>First</h3>
           <p>This is the first ever picture in my carousel.</p>
@@ -107,7 +107,7 @@
       </div>
 
     <div class="item">
-        <img src="images/slider/02.jpg" alt="Second" width="460" height="345">
+        <img src="images/slider/02.jpg" alt="Second" width="inherit" height="145">
         <div class="carousel-caption">
           <h3>Second</h3>
           <p>Hi, this si the second picture in carousel.</p>
@@ -115,7 +115,7 @@
       </div>
 
     <div class="item">
-        <img src="images/slider/03.jpg" alt="Third" width="460" height="345">
+        <img src="images/slider/03.jpg" alt="Third" width="inherit" height="145">
         <div class="carousel-caption">
           <h3>Third</h3>
           <p>Hi, this si the third picture in carousel.</p>
@@ -123,7 +123,7 @@
       </div>
 
     <div class="item">
-        <img src="images/slider/04.jpg" alt="Fourth" width="460" height="345">
+        <img src="images/slider/04.jpg" alt="Fourth" width="inherit" height="145">
         <div class="carousel-caption">
           <h3>Fourth</h3>
           <p>Hi, this si the fourth picture in carousel.</p>
