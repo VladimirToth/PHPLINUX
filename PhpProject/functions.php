@@ -151,37 +151,35 @@ function display_staffs() {
     if ($result->num_rows > 0) {
     // output data of each row
         while($row = $result->fetch_assoc()) {
-            display_row($row);
+            display_staffs_row($row);
         }
     } else {
         echo "0 results";
     }
     $conn->close();   
 }
-function display_row($row) {  ?>
-    <div class="header">
-        <table>
+function display_staffs_row($row) {  ?>
+
+    <div class="staff-details">
+        <table font-size>
+            <div class="header">
+                <tr>
+                    <td class="text-center"><h2><?=$row['Name'];?> </h2></td>
+                    <td><h2><?=$row['JobTitle'];?></h2></td>
+                </tr>
+            </div>
+            
             <tr>
-                <td><h2> <?=$row['Name']; ?> </h2></td>
-                <td><h2><?=$row['JobTitle'];?></h2></td>
-            </tr>
-        </table>
-        
-    </div>
- 
-    <div class="staff-detail">
-        <table>
-            <tr>
-                <th rowspan="4"><img src="<?=$row['Image'];?>" class="img-circle"/></th> 
+                <th rowspan="5"><img src="<?=$row['Image'];?>" alt="<?=$row['Name'];?>" class="img-circle"/></th> 
             </tr>
             <tr>
               <td><?=$row['Qualifications'];?></td>
             </tr>
             <tr>
-              <td><?=$row['WorkingDaysandTimes']; ?></td>
+              <td>Working days: <?=$row['WorkingDaysandTimes']; ?></td>
             </tr>
             <tr>
-                <td><?=$row['Email']; ?></td>
+                <td>E-mail: <?=$row['Email']; ?></td>
             </tr>
         </table>
     </div>
