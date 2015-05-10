@@ -294,4 +294,4 @@ function display_staffs_row($row) {  ?>
         </table>
     </div>
 <?php } ?>
-                        <p class="img-responsive"><img style="height: 200px; width: 200px" src="<?=$row['Image'];?>"/></p>
+                        <!--<p class="img-responsive"><img style="height: 200px; width: 200px" src="<?=$row['Image'];?>"/></p>-->
