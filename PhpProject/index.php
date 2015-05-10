@@ -1,25 +1,12 @@
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-	<?php
+    <head>
+        <?php
         include("functions.php");
-//    if(isset($_GET['page'])) {
-//        switch($_GET['page']) {
-//            case "about":
-//                $page="about";
-//                break;
-//            case "contact":
-//                $page="contact";
-//                break;
-//            default: $page='index';
-//        }
-//    } else {
-//        $page="index";
-//    }
-    include("/libraries/views/head.php");
-    ?>
-        </head>
+        include("/libraries/views/head.php");
+        ?>
+    </head>
         <body>
 <!-- Wrap all page content here -->
 
@@ -141,7 +128,7 @@
 <!-- Begin page content -->
 <!--<div class="divider"></div>-->
   
-<div class="container">
+<div class="container" id="section1">
   <div class="col-sm-10 col-sm-offset-1"> 
     <p class="lead text-center">
         We welcome you to our dental practice located in the heart of downtown <mark>Bratislava</mark>.

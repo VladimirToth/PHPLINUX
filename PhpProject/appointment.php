@@ -1,30 +1,18 @@
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-	<?php
+    <head>
+    <?php
         include("functions.php");
-//    if(isset($_GET['page'])) {
-//        switch($_GET['page']) {
-//            case "about":
-//                $page="about";
-//                break;
-//            case "contact":
-//                $page="contact";
-//                break;
-//            default: $page='index';
-//        }
-//    } else {
-//        $page="index";
-//    }
-    include("/libraries/views/head.php");
+        include("/libraries/views/head.php");
     ?>
-        </head>
-        <body>
-<!-- Wrap all page content here -->
-<script src="web/js/jquery-2.1.3.js"></script>
-<div id="wrap">
- 
+    </head>
+    <body>
+        
+    <!-- Wrap all page content here -->
+    <script src="web/js/jquery-2.1.3.js"></script>
+    <div id="wrap">
+
     <header>
 
 <!-- Fixed navbar -->
@@ -64,9 +52,40 @@
           <li><a href="index.php#section5">Contact</a></li>
           <li><a href="index.php#section6">Feedback</a></li>
         </ul>
-      </div><!--/.nav-collapse -->
-    </div><!--/.container -->
-</div><!--/.navbar -->
+      </div>
+    </div>
+    
+</div>
+
+<!--<div class="container">
+  <nav class="navbar navbar-default" role="navigation" id="topmenu">
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a href="#" data-toggle="collapse" data-target="#one">One</a>
+      </li>
+      <li class="dropdown">
+        <a href="#" data-toggle="collapse" data-target="#two">Two</a>
+      </li>
+      <li class="dropdown">
+        <a href="#" data-toggle="collapse" data-target="#three">Three</a>
+      </li>
+    </ul>
+  </nav>
+</div>-->
+
+<?php 
+    navbar();
+?>
+<div class="container">
+  <nav class="navbar navbar-default" role="navigation" id="submenu">
+    <ul class="nav navbar-nav collapse" id="one">
+      <li><a href="#" id="">One sub 1</a></li>
+      <li><a href="#" id="">One sub 2</a></li>
+      <li><a href="#" id="">One sub 3</a></li>
+      <li><a href="#" id="">One sub 4</a></li>
+    </ul>
+  </nav>
+</div>
     </header>
 
 <!-- Begin page content -->

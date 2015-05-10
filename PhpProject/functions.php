@@ -5,6 +5,13 @@ define('DBPASS','');
 define('DBSELECT','dentist');
 define('PERPAGE',3);
 
+   $conn = new mysqli(DBHOST, DBUSER, DBPASS, DBSELECT);
+    
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
+    
 //function get_meta_data($page='index') {
 //    $array=array(
 //        'index' => array(
@@ -160,14 +167,9 @@ function display_staffs() {
 }
 
 function display_services() {
-
-   $conn = new mysqli(DBHOST, DBUSER, DBPASS, DBSELECT);
     
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    } 
-    
+    global $conn;
+  
     $sql = "SELECT * FROM services";
     $result = $conn->query($sql);
     
@@ -182,10 +184,75 @@ function display_services() {
     $conn->close();   
 }
 
+function display_appointments() {
+
+    global $conn;
+
+    $sql = "SELECT * FROM services";
+    $result =  $conn->query($sql);
+    
+    if ($result->num_rows > 0) {
+    // output data of each row
+        while($row = $result->fetch_assoc()) {
+            display_appointments_row($row);
+        }
+    } else {
+        echo "0 results";
+    }
+    $conn->close();   
+}
+
+function navbar() {
+
+    global $conn;
+    $data = [];
+
+    $sql = "SELECT ServiceName FROM services";
+    $result = $conn->query($sql);
+    
+    if ($result->num_rows > 0) {
+        // Read the results and create $data array
+        while($row = $result->fetch_array())
+        {
+            $data[] = $row;
+        }
+        
+//        $s = 0;
+//        foreach ($data as $value) {
+//            echo $value[$s];
+//            $s++;
+//        }
+    } else {
+        echo "0 results";
+    }
+    ?>
+
+    <div class="container">
+      <nav class="navbar navbar-default" role="navigation" id="topmenu">
+        <ul class="nav navbar-nav">
+            <?php
+            $i=0;
+            foreach($data as $value){
+                if(isset($value[$i])){?>                   
+                    <li class="dropdown">
+                            <a href="#" data-toggle="collapse" data-target="#one"><?=$value[$i];?></a>
+                    </li>
+                    <?php
+                    $i++;
+                }   
+            }
+            ?>
+        </ul>
+      </nav>
+    </div>
+    <?php
+    $conn->close();   
+}
+
 function display_services_row($row) { ?>
 
 <!--	<div class="row-fluid">
--->            <div class="col-sm-4 well-sm" style="display: table-cell">
+-->            <div class="col-sm-4">
 <!--                <div class="panel panel-default">-->
                     <div class="well-sm">
                         <p class="lead"><?=$row['ServiceName'];?></p>
@@ -227,3 +294,4 @@ function display_staffs_row($row) {  ?>
         </table>
     </div>
 <?php } ?>
+                        <p class="img-responsive"><img style="height: 200px; width: 200px" src="<?=$row['Image'];?>"/></p>
