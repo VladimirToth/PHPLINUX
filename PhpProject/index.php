@@ -16,8 +16,11 @@
     <header>
 
 <!-- Fixed navbar -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <div class="navbar navbar-custom navbar-inverse navbar-static-top" id="nav">
-    <div class="container">
+    <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" 
                 data-target=".navbar-collapse">
@@ -30,7 +33,19 @@
         <ul class="nav navbar-nav nav-justified">
           <li><a href="#section4">Offers</a></li>
           <li><a href="#section2">Our Staff</a></li>
-          <li><a href="appointment.php">Appointment</a></li>
+          <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Appointment
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="appointment.php">Filling</a></li>
+            <li><a href="#">Inlays and Onlays</a></li>
+            <li><a href="#">Dental bridge</a></li>
+            <li><a href="#">Dental crown</a></li>
+            <li><a href="#">Root canal therapy</a></li>
+            <li><a href="#">Teeth whitening</a></li>
+          </ul>
+        </li>
+          <!--<li><a href="appointment.php">Appointment</a></li>-->
           <li class="active"><a href="#section1"><strong>Welcome</strong></a></li>
           <li><a href="#section3">About</a></li>
           <li><a href="#section5">Contact</a></li>
@@ -40,7 +55,7 @@
     </div><!--/.container -->
 </div><!--/.navbar -->
     </header>
-<div class="container">
+<div class="container" id="section1">
      <div class="page-header text-center">
       <h1>Welcome to Dentists from another universe.</h1>
     </div>

@@ -16,8 +16,12 @@
     <header>
 
 <!-- Fixed navbar -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
+<!--  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
+
 <div class="navbar navbar-custom navbar-inverse navbar-static-top" id="nav">
-    <div class="container">
+    <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" 
                 data-target=".navbar-collapse">
@@ -30,7 +34,18 @@
         <ul class="nav navbar-nav nav-justified">
             <li><a href="index.php#section4">Offers</a></li>
             <li><a href="index.php#section2">Our Staff</a></li>
-          <li class="dropdown"><a href="#" data-toogle="collapse" data-target="one">Appointment</a></li>
+          <li class="dropdown active">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Appointment
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <li><a href="appointment.php#section1">Filling</a></li>
+            <li><a href="#">Inlays and Onlays</a></li>
+            <li><a href="#">Dental bridge</a></li>
+            <li><a href="#">Dental crown</a></li>
+            <li><a href="#">Root canal therapy</a></li>
+            <li><a href="#">Teeth whitening</a></li>
+          </ul>
+        </li>
           <li><a href="index.php#section1"><strong>Welcome</strong></a></li>
           <li><a href="index.php#section3">About</a></li>
           <li><a href="index.php#section5">Contact</a></li>

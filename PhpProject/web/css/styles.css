@@ -127,7 +127,7 @@ h1 {
 	color: #ddd;
 }
 .navbar-custom  .navbar-nav li>a:hover, .navbar-nav li .open, .navbar-custom .navbar-nav .active a  {
-	background-color: #000;
+	background-color: rgba(255, 209, 10, 0.92);
 }
 .navbar-custom .dropdown-menu{
 	right:0;
