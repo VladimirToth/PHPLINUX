@@ -1,12 +1,8 @@
 
-<div class="pull-left">
-    <p class="text-muted">Hello to our footer</p>
-  </div>
-<div class="center-block">
-    <p class="text-muted">Center block</p>
-</div>
-<div class="pull-right">
-    <p>Right container</p>
+ <div class="row">
+     <div class="col-sm-4"><p class="text-muted"><a href="#" class="btn btn-info" role="button" style="background-color: inherit">Privacy Policy & Copyright</a></p></div>
+     <div class="col-sm-4"><p class="text-muted">Address</p></div>
+     <div class="col-sm-4"><p class="text-muted">Developed with Aptech Europe</p></div>
 </div>
 
 <!--<div class="footer_section">
