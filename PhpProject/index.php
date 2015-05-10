@@ -1,25 +1,12 @@
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-	<?php
+    <head>
+        <?php
         include("functions.php");
-//    if(isset($_GET['page'])) {
-//        switch($_GET['page']) {
-//            case "about":
-//                $page="about";
-//                break;
-//            case "contact":
-//                $page="contact";
-//                break;
-//            default: $page='index';
-//        }
-//    } else {
-//        $page="index";
-//    }
-    include("/libraries/views/head.php");
-    ?>
-        </head>
+        include("/libraries/views/head.php");
+        ?>
+    </head>
         <body>
 <!-- Wrap all page content here -->
 

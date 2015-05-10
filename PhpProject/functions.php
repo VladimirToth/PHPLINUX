@@ -5,6 +5,13 @@ define('DBPASS','');
 define('DBSELECT','dentist');
 define('PERPAGE',3);
 
+   $conn = new mysqli(DBHOST, DBUSER, DBPASS, DBSELECT);
+    
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
+    
 //function get_meta_data($page='index') {
 //    $array=array(
 //        'index' => array(
@@ -160,14 +167,9 @@ function display_staffs() {
 }
 
 function display_services() {
-
-   $conn = new mysqli(DBHOST, DBUSER, DBPASS, DBSELECT);
     
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    } 
-    
+    global $conn;
+  
     $sql = "SELECT * FROM services";
     $result = $conn->query($sql);
     
@@ -181,6 +183,56 @@ function display_services() {
     }
     $conn->close();   
 }
+
+function display_appointments() {
+
+    global $conn;
+
+    $sql = "SELECT * FROM services";
+    $result =  $conn->query($sql);
+    
+    if ($result->num_rows > 0) {
+    // output data of each row
+        while($row = $result->fetch_assoc()) {
+            display_appointments_row($row);
+        }
+    } else {
+        echo "0 results";
+    }
+    $conn->close();   
+}
+
+function navbar() {
+
+    global $conn;
+
+    $sql = "SELECT ServiceName FROM services";
+    $result =  $conn->query($sql);
+    
+    if ($result->num_rows > 0) {
+    // output data of each row
+        $row = $result->fetch_array();
+        echo $row[0];
+       
+            navbar_row($row);
+
+    } else {
+        echo "0 results";
+    }
+    $conn->close();   
+}
+
+function navbar_row($row) {  ?>
+    <div class="container">
+      <nav class="navbar navbar-default" role="navigation" id="topmenu">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" data-toggle="collapse" data-target="#one"><?=$row['ServiceName'];?></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+<?php } 
 
 function display_services_row($row) {  ?>
 
@@ -198,7 +250,6 @@ function display_services_row($row) {  ?>
                 </div>
             </div>
         </div>
-   
 <?php } 
 
 function display_staffs_row($row) {  ?>
