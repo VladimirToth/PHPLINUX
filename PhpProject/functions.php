@@ -158,10 +158,53 @@ function display_staffs() {
     }
     $conn->close();   
 }
+
+function display_services() {
+
+   $conn = new mysqli(DBHOST, DBUSER, DBPASS, DBSELECT);
+    
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
+    
+    $sql = "SELECT * FROM services";
+    $result = $conn->query($sql);
+    
+    if ($result->num_rows > 0) {
+    // output data of each row
+        while($row = $result->fetch_assoc()) {
+            display_services_row($row);
+        }
+    } else {
+        echo "0 results";
+    }
+    $conn->close();   
+}
+
+function display_services_row($row) {  ?>
+
+	<div class="row-fluid">
+            <div class="col-sm-4 col-xs-6">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p class="lead"><?=$row['ServiceName'];?></p>
+                        <p><img src="<?=$row['Image'];?>" class="img-responsive"></p>
+                        <p><?=$row['Description'];?></p>   
+                        <p>Price: <?=$row['ServicePrice'];?> Euros</p>
+                        <p>Discount: <?=$row['Discount'];?> %</p>
+                        <p>Period of discount: <?=$row['DiscountStartDate'];?> - <?=$row['DiscountEndDate'];?> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+<?php } 
+
 function display_staffs_row($row) {  ?>
 
     <div class="staff-details">
-        <table font-size>
+        <table>
             <div class="header">
                 <tr>
                     <td class="text-center"><h2><?=$row['Name'];?> </h2></td>
@@ -170,13 +213,13 @@ function display_staffs_row($row) {  ?>
             </div>
             
             <tr>
-                <th rowspan="5"><img src="<?=$row['Image'];?>" alt="<?=$row['Name'];?>" class="img-circle"/></th> 
+                <th rowspan="4"><img src="<?=$row['Image'];?>" alt="<?=$row['Name'];?>" class="img-circle"/></th> 
             </tr>
             <tr>
               <td><?=$row['Qualifications'];?></td>
             </tr>
             <tr>
-              <td>Working days: <?=$row['WorkingDaysandTimes']; ?></td>
+              <td>Working days: <?=$row['WorkingDaysandTimes'];?></td>
             </tr>
             <tr>
                 <td>E-mail: <?=$row['Email']; ?></td>
