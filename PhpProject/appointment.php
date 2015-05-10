@@ -40,7 +40,7 @@
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
               <li><a href="appointment.php#section1">Filling</a></li>
-            <li><a href="#">Inlays and Onlays</a></li>
+            <li><a href="appointment.php#section1">Inlays and Onlays</a></li>
             <li><a href="#">Dental bridge</a></li>
             <li><a href="#">Dental crown</a></li>
             <li><a href="#">Root canal therapy</a></li>
@@ -74,9 +74,10 @@
 </div>-->
 
 <?php 
-    navbar();
+   // navbar();
 ?>
-<div class="container">
+
+<!--<div class="container">
   <nav class="navbar navbar-default" role="navigation" id="submenu">
     <ul class="nav navbar-nav collapse" id="one">
       <li><a href="#" id="">One sub 1</a></li>
@@ -85,48 +86,40 @@
       <li><a href="#" id="">One sub 4</a></li>
     </ul>
   </nav>
-</div>
+</div> -->
     </header>
 
-<!-- Begin page content -->
+// Begin page content 
 
 <div class="container" id="section1">
-  <div class="col-sm-10 col-sm-offset-1">
-    <div class="page-header text-center">
-      <h2>Please choose a service you desire to perform and then please select a date from calendar to make appointment:</h2>
-    </div>
-    <div class="row">
-     <div class="col-sm-4">
-         <p class="text-justify">First column snaskldflS C ALSFG LASDFLASD GFLdnflds flasgj;saf g;asf ;asr glisd laskgn lsdn</p>
-     </div>
-     <div class="col-sm-4">
-         <p class="text-justify">Second jdfslidvn alsfnsdl vaslgn salg nasl aslf nslg;agnlfskg ns ;sgn as;ofwa;pfkPFARTUEW[FICBSLG A</p>
+<form>
+  <div class="form-group">
+    <label for="service">Service</label>
+    <br>
+    <label for="serviceName">dsa</label>
   </div>
-     <div class="col-sm-4">
-         <p class="text-justify">Drei als die dritte reich ASDFSAFJG AF GLAF;OF OE EFWEOFWPOF E FOIWF lpewnfpi ls vpif</p>
-     </div>
+  <div class="form-group">
+    <label for="InputEmail">Email address</label>
+    <input type="email" class="form-control" id="InputEmail" placeholder="Enter email">
   </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">File input</label>
+    <input type="file" id="exampleInputFile">
+    <p class="help-block">Example block-level help text here.</p>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Check me out
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
 </div>
-</div>
-  
-    <div class="divider"></div>
 
-<div class="container" id="section2">
-  <div class="col-sm-10 col-sm-offset-1">
-    <div class="row">
-     <div class="col-sm-4">
-         <p class="text-justify">First column snaskldflS C ALSFG LASDFLASD GFLdnflds flasgj;saf g;asf ;asr glisd laskgn lsdn</p>
-     </div>
-     <div class="col-sm-4">
-         <p class="text-justify">Second jdfslidvn alsfnsdl vaslgn salg nasl aslf nslg;agnlfskg ns ;sgn as;ofwa;pfkPFARTUEW[FICBSLG A</p>
-  </div>
-     <div class="col-sm-4">
-         <p class="text-justify">Drei als die dritte reich ASDFSAFJG AF GLAF;OF OE EFWEOFWPOF E FOIWF lpewnfpi ls vpif</p>
-     </div>
-  </div>
-</div>
-</div>
-</div><!--/wrap-->
 
 <div id="footer">
     <?php
