@@ -185,7 +185,7 @@ function display_services() {
 function display_services_row($row) { ?>
 
 <!--	<div class="row-fluid">
--->            <div class="col-sm-4" style="display: table-cell">
+-->            <div class="col-sm-4 well-sm" style="display: table-cell">
 <!--                <div class="panel panel-default">-->
                     <div class="well-sm">
                         <p class="lead"><?=$row['ServiceName'];?></p>
