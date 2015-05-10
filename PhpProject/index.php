@@ -200,74 +200,14 @@
 </section>
   
 <div class="container bg-4">
-	<div class="row">
-	   <div class="col-sm-4 col-xs-6">
-      
-        <div class="panel panel-default">
-          <div><img src="images/services/filling.jpg" class="img-responsive"></div>
-          <div class="panel-body">
-            <p class="lead">Filling</p>
-            <p class="well">Placing an amalgam filling (mercury, silver and other base metals) 
-                is a typical procedure for fixing cavities.</p>
-            
-            
-          </div>
-        </div><!--/panel-->
-      </div><!--/col-->
-      
-      <div class="col-sm-4 col-xs-6">
-      
-      	<div class="panel panel-default">
-            <div class="panel-thumbnail"><img src="images/services/inlay_onlay.jpg" 
-                                            class="img-responsive"></div>
-          <div class="panel-body">
-            <p class="lead">Inlays and onlays</p>
-            <p class="well">Inlays and onlays are restorations used to repair teeth with mild to 
-                moderate decay or damage. They are a good solution when the area to 
-                restore is too large for a filling, yet not so extensive that a dental 
-                crown is required. </p>
-            
-            
-          </div>
-        </div><!--/panel--> 
-      </div><!--/col-->
-      
-      <div class="col-sm-4 col-xs-6">
-      
-      	<div class="panel panel-default">
-          <div class="panel-thumbnail"><img src="images/services/bridge.jpg" 
-                                            class="img-responsive"></div>
-          <div class="panel-body">
-            <p class="lead">Dental bridge</p>
-            <p class="well">A dental bridge from our clinic may be suitable for you if you’re missing one or more teeth. </p>
-            
-            
-          </div>
-        </div><!--/panel--> 
-
-      </div><!--/col--> 
-	</div><!--/row-->
-        
-        <div class="col-sm-4 col-xs-6">
-      
-      	<div class="panel panel-default">
-          <div class="panel-thumbnail"><img src="images/services/crown.jpg" 
-                                            class="img-responsive"></div>
-          <div class="panel-body">
-            <p class="lead">Dental crown</p>
-            <p class="well">A dental crown (commonly known as a cap) is a dental restoration that 
-                replaces the outer surface of your tooth with ceramic material and/or gold. 
-                It is commonly used to restore a tooth when it is too damaged to support a 
-                filling, inlay or only.  </p>
-            
-          </div>
-        </div><!--/panel--> 
-
-      </div><!--/col--> 
-	</div><!--/row-->
-        
-
-</div><!--/container-->
+    <div class="row-fluid">
+       
+    <?php
+    display_services();
+    ?>
+   
+    </div> 
+</div>
 
 <div class="divider" id="section5"></div>
 

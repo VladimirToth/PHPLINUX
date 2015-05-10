@@ -151,37 +151,78 @@ function display_staffs() {
     if ($result->num_rows > 0) {
     // output data of each row
         while($row = $result->fetch_assoc()) {
-            display_row($row);
+            display_staffs_row($row);
         }
     } else {
         echo "0 results";
     }
     $conn->close();   
 }
-function display_row($row) {  ?>
-    <div class="header">
+
+function display_services() {
+
+   $conn = new mysqli(DBHOST, DBUSER, DBPASS, DBSELECT);
+    
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
+    
+    $sql = "SELECT * FROM services";
+    $result = $conn->query($sql);
+    
+    if ($result->num_rows > 0) {
+    // output data of each row
+        while($row = $result->fetch_assoc()) {
+            display_services_row($row);
+        }
+    } else {
+        echo "0 results";
+    }
+    $conn->close();   
+}
+
+function display_services_row($row) { ?>
+
+<!--	<div class="row-fluid">
+-->            <div class="col-sm-4">
+<!--                <div class="panel panel-default">-->
+                    <div class="well-sm">
+                        <p class="lead"><?=$row['ServiceName'];?></p>
+                        <p class="img-responsive"><img style="height: 100px; width: 100px" src="<?=$row['Image'];?>"/></p>
+                        <p class="text-justify"><?=$row['Description'];?></p>   
+                        <p>Price: <?=$row['ServicePrice'];?> Euros</p>
+                        <p>Discount: <?=$row['Discount'];?> %</p>
+                        <p>Period of discount: <?=$row['DiscountStartDate'];?> - <?=$row['DiscountEndDate'];?> </p>
+                    </div>
+<!--                </div>-->
+            </div><!--
+        </div>-->
+   
+<?php } 
+
+function display_staffs_row($row) {  ?>
+
+    <div class="staff-details">
         <table>
+            <div class="header">
+                <tr>
+                    <td class="text-center"><h2><?=$row['Name'];?> </h2></td>
+                    <td><h2><?=$row['JobTitle'];?></h2></td>
+                </tr>
+            </div>
+            
             <tr>
-                <td><h2> <?=$row['Name']; ?> </h2></td>
-                <td><h2><?=$row['JobTitle'];?></h2></td>
-            </tr>
-        </table>
-        
-    </div>
- 
-    <div class="staff-detail">
-        <table>
-            <tr>
-                <th rowspan="4"><img src="<?=$row['Image'];?>" class="img-circle"/></th> 
+                <th rowspan="4"><img src="<?=$row['Image'];?>" alt="<?=$row['Name'];?>" class="img-circle"/></th> 
             </tr>
             <tr>
               <td><?=$row['Qualifications'];?></td>
             </tr>
             <tr>
-              <td><?=$row['WorkingDaysandTimes']; ?></td>
+              <td>Working days: <?=$row['WorkingDaysandTimes'];?></td>
             </tr>
             <tr>
-                <td><?=$row['Email']; ?></td>
+                <td>E-mail: <?=$row['Email']; ?></td>
             </tr>
         </table>
     </div>

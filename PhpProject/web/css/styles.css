@@ -206,7 +206,7 @@ section {
 }
 
 .bg-3 {
-	background: url('http://www.bootply.com/assets/example/bg_6.jpg') no-repeat center center fixed; 
+	background:#efefef no-repeat center center fixed; 
     -webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -216,6 +216,10 @@ section {
 .bg-4 {
 	padding-top:30px;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(20,20,20,0.2)),to(rgba(255,255,255,0)), color-stop(1,#000));
+}
+
+.staff-details{
+   font-size: 16px;
 }
 
                 /* jssor slider arrow navigator skin 11 css */
@@ -243,4 +247,6 @@ section {
                 .jssora11r:hover { background-position: -191px -41px; }
                 .jssora11l.jssora11ldn { background-position: -251px -41px; }
                 .jssora11r.jssora11rdn { background-position: -311px -41px; }
+
+                
        
