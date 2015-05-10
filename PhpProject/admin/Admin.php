@@ -6,9 +6,10 @@ class Admin
     private $adminPassword = 'admin';
     private $errors = array();
 // HEAD
-    private $baseUrl = 'http://localhost/PHPLINUX/PhpProject/#section1/admin/';
+    private $baseUrl = 'http://localhost/PHPLINUX/PhpProject/admin/';
 
-//>>>>>>> origin/master
+//
+ //   private $baseUrl = 'http://localhost/aptech/web/admin/';
     public function __construct() {
         if(!$this->isAdmin()) {
             $this->checkAdmin();
@@ -18,14 +19,14 @@ class Admin
         }
     }
     private function displayPage() {
-        $page = !isset($_GET['page']) ? 'products' : $_GET['page'];
+        $page = !isset($_GET['page']) ? 'services' : $_GET['page'];
         $this->displayNav();
         switch($page) {
-            case 'products':
-                $this->displayProducts();
+            case 'services':
+                $this->displayServices();
                 break;
-            case 'categories':
-                $this->displayCategories();
+            case 'staff':
+                $this->displayStaff();
                 break;
             case 'logout':
                 $this->displayLogout();
@@ -38,7 +39,7 @@ class Admin
                 $this->displayAddProduct();
                 break;
             default:
-                $this->displayProducts();
+                $this->displayServices();
         }
     }
     private function editProduct() {
@@ -173,35 +174,72 @@ class Admin
             </form>
         ';
     }
-    private function displayProducts() {
+    private function displayServices() {
         $db = new Db();
         $products = $db->query("
-            SELECT products.*, pl.description, pl.name
-            FROM eshop AS products
-            LEFT JOIN eshop_lang AS pl ON products.id_product = pl.id_product
+            SELECT *
+            FROM dentist.services AS Services
         ");
         echo '<div>
-        <a href="?page=addproduct" class="btn btn-primary">Add product</a>
+        <a href="?page=addproduct" class="btn btn-primary">Add Service</a>
         </div>';
         echo '<table class="table table-striped">';
         echo '<tr>';
-        echo '<th>ID</th><th>price</th><th>description</th><th>name</th><th>action</th>';
+        echo '<th>ServiceID</th><th>ServicePrice</th><th>Description</th><th>ServiceName</th><th>action</th>';
         echo '</tr>';
-        while($product = mysqli_fetch_array($products, MYSQL_ASSOC)) {
+        while($service = mysqli_fetch_array($products, MYSQL_ASSOC)) {
             echo '<tr>
-                <td>'.$product['id_product'].'</td>
-                <td>'.$product['price'].'</td>
+                <td>'.$service['ServiceID'].'</td>
+                <td>'.$service['ServicePrice'].'</td>
                 <td>
-                '.(strlen($product['description']) > 15
+                '.(strlen($service['Description']) > 15
                 ?
-                substr($product['description'], 0, 15) . '...'
+                substr($service['Description'], 0, 15) . '...'
                 :
-                $product['description']).'
+                $service['Description']).'
                 </td>
-                <td>'.$product['name'].'</td>
+                <td>'.$service['ServiceName'].'</td>
                 <td>
-                <a href="?page=editproduct&id='.$product['id_product'].'" class="btn btn-default">Edit</a>
-                <a href="?page=deleteproduct&id='.$product['id_product'].'" class="btn btn-default">Delete</a>
+                <a href="?page=editproduct&id='.$service['ServiceID'].'" class="btn btn-default">Edit</a>
+                <a href="?page=deleteproduct&id='.$service['ServiceID'].'" class="btn btn-default">Delete</a>
+                </td>
+            </tr>';
+        }
+        echo '</table>';
+    }
+    
+    private function displayStaff() {
+        $db = new Db();
+        $products = $db->query("
+            SELECT *
+            FROM dentist.staff AS Staff
+        ");
+        echo '<div>
+        <a href="?page=addstaff" class="btn btn-primary">Add Staff</a>
+        </div>';
+        echo '<table class="table table-striped">';
+        echo '<tr>';
+        echo '<th>ID</th><th>Name</th><th>Qualifications</th><th>JobTitle</th><th>Image</th><th>Public</th><th>WorkingDaysandTimes</th><th>Email</th><th>action</th>';
+        echo '</tr>';
+        while($staff = mysqli_fetch_array($products, MYSQL_ASSOC)) {
+            echo '<tr>
+                <td>'.$staff['ID'].'</td>
+                <td>'.$staff['Name'].'</td>
+                <td>
+                '.(strlen($staff['Qualifications']) > 15
+                ?
+                substr($staff['Qualifications'], 0, 15) . '...'
+                :
+                $staff['Qualifications']).'
+                </td>
+                <td>'.$staff['JobTitle'].'</td>
+                <td>'.$staff['Image'].'</td>
+                <td>'.$staff['Public'].'</td>
+                <td>'.$staff['WorkingDaysandTimes'].'</td>
+                <td>'.$staff['Email'].'</td>
+                <td>
+                <a href="?page=editstaff&id='.$staff['ID'].'" class="btn btn-default">Edit</a>
+                <a href="?page=deletestaff&id='.$staff['ID'].'" class="btn btn-default">Delete</a>
                 </td>
             </tr>';
         }
@@ -209,9 +247,10 @@ class Admin
     }
     private function displayNav() {
         echo '
-        <a href="?page=products" class="btn btn-primary">Products</a>
-        <a href="?page=categories" class="btn btn-primary">Categories</a>
-        <a href="?page=logout" class="btn btn-primary">Log out</a>
+        <a href="?page=appointments" class="btn btn-primary col-sm-3">Appointments</a>
+        <a href="?page=services" class="btn btn-primary col-sm-3">Services</a>
+        <a href="?page=staff" class="btn btn-primary col-sm-3">Staff</a>
+        <a href="?page=logout" class="btn btn-primary col-sm-3">Log out</a>
         ';
     }
     private function displayErrors() {

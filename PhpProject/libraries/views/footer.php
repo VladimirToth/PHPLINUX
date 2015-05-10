@@ -1,8 +1,16 @@
 
  <div class="row">
-     <div class="col-sm-4"><p class="text-muted"><a href="#" class="btn btn-info" role="button" style="background-color: inherit">Privacy Policy & Copyright</a></p></div>
-     <div class="col-sm-4"><p class="text-muted">Address</p></div>
-     <div class="col-sm-4"><p class="text-muted">Developed with Aptech Europe</p></div>
+     <div class="col-sm-4"><p class="text-muted"><a href="privacy.html" class="btn btn-info" role="button" style="background-color: inherit">Privacy Policy & Copyright</a></p></div>
+     <div class="col-sm-4">
+        <p class="text-muted">
+        <address class="text-muted">
+        <strong>Dentist from another Universe, D.D.S.</strong><br>
+        <strong>Phone:</strong> (02) 55 56 412
+        <strong>Email:</strong>
+        <a href="mailto:trainscheduleconfirmation@gmail.com">dentist@example.com</a>
+      </address></p></div>
+     <div class="col-sm-4"><p class="text-muted">Developed with Enthusiasm</p></br>
+         <p class="text-muted">Powered by Aptech Europe</p></div>
 </div>
 
 <!--<div class="footer_section">
