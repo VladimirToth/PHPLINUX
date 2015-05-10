@@ -205,51 +205,67 @@ function display_appointments() {
 function navbar() {
 
     global $conn;
+    $data = [];
 
     $sql = "SELECT ServiceName FROM services";
-    $result =  $conn->query($sql);
+    $result = $conn->query($sql);
     
     if ($result->num_rows > 0) {
-    // output data of each row
-        $row = $result->fetch_array();
-        echo $row[0];
-       
-            navbar_row($row);
-
+        // Read the results and create $data array
+        while($row = $result->fetch_array())
+        {
+            $data[] = $row;
+        }
+        
+//        $s = 0;
+//        foreach ($data as $value) {
+//            echo $value[$s];
+//            $s++;
+//        }
     } else {
         echo "0 results";
     }
-    $conn->close();   
-}
+    ?>
 
-function navbar_row($row) {  ?>
     <div class="container">
       <nav class="navbar navbar-default" role="navigation" id="topmenu">
         <ul class="nav navbar-nav">
-          <li class="dropdown">
-            <a href="#" data-toggle="collapse" data-target="#one"><?=$row['ServiceName'];?></a>
-          </li>
+            <?php
+            $i=0;
+            foreach($data as $value){
+                if(isset($value[$i])){?>                   
+                    <li class="dropdown">
+                            <a href="#" data-toggle="collapse" data-target="#one"><?=$value[$i];?></a>
+                    </li>
+                    <?php
+                    $i++;
+                }   
+            }
+            ?>
         </ul>
       </nav>
     </div>
-<?php } 
+    <?php
+    $conn->close();   
+}
 
-function display_services_row($row) {  ?>
+function display_services_row($row) { ?>
 
-	<div class="row-fluid">
-            <div class="col-sm-4 col-xs-6">
-                <div class="panel panel-default">
-                    <div class="panel-body">
+<!--	<div class="row-fluid">
+-->            <div class="col-sm-4">
+<!--                <div class="panel panel-default">-->
+                    <div class="well-sm">
                         <p class="lead"><?=$row['ServiceName'];?></p>
-                        <p><img src="<?=$row['Image'];?>" class="img-responsive"></p>
-                        <p><?=$row['Description'];?></p>   
+                        <p class="img-responsive"><img style="height: 200px; width: 200px" src="<?=$row['Image'];?>"/></p>
+                        <p class="text-justify"><?=$row['Description'];?></p>   
                         <p>Price: <?=$row['ServicePrice'];?> Euros</p>
                         <p>Discount: <?=$row['Discount'];?> %</p>
                         <p>Period of discount: <?=$row['DiscountStartDate'];?> - <?=$row['DiscountEndDate'];?> </p>
                     </div>
-                </div>
-            </div>
-        </div>
+<!--                </div>-->
+            </div><!--
+        </div>-->
+   
 <?php } 
 
 function display_staffs_row($row) {  ?>
