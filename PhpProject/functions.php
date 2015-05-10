@@ -185,11 +185,11 @@ function display_services() {
 function display_services_row($row) { ?>
 
 <!--	<div class="row-fluid">
--->            <div class="col-sm-4">
+-->            <div class="col-sm-4" style="display: table-cell">
 <!--                <div class="panel panel-default">-->
                     <div class="well-sm">
                         <p class="lead"><?=$row['ServiceName'];?></p>
-                        <p class="img-responsive"><img style="height: 100px; width: 100px" src="<?=$row['Image'];?>"/></p>
+                        <p class="img-responsive"><img style="height: 150px; width: 200px" src="<?=$row['Image'];?>"/></p>
                         <p class="text-justify"><?=$row['Description'];?></p>   
                         <p>Price: <?=$row['ServicePrice'];?> Euros</p>
                         <p>Discount: <?=$row['Discount'];?> %</p>
