@@ -34,6 +34,7 @@
         <ul class="nav navbar-nav nav-justified">
             <li><a href="index.php#section4">Offers</a></li>
             <li><a href="index.php#section2">Our Staff</a></li>
+          <!--<li class="active"><a href="#">Appointment</a></li>-->
           <li class="dropdown active">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Appointment
           <span class="caret"></span></a>
