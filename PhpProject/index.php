@@ -27,26 +27,6 @@
  
 <!--<header class="masthead">-->
     <header>
-<!--    <div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-        <h1><a href="#" title="Our page">Dentist</a>
-          <p class="lead">{A dentist from another universe}</p></h1>
-      </div>
-      <div class="col-sm-6">
-        <div class="pull-right  hidden-xs">    
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><h3>
-            <i class="glyphicon glyphicon-cog"></i></h3></a>
-          <ul class="dropdown-menu">
-              <li><a href="#"><i class="glyphicon glyphicon-chevron-right"></i> Link</a></li>
-              <li><a href="#"><i class="glyphicon glyphicon-user"></i> Link</a></li>
-              <li><a href="#"><i class="glyphicon glyphicon-lock"></i> Link</a></li>
-              <li><a href="#"><i class="glyphicon glyphicon-cog"></i> Link</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    </div>-->
 
 <!-- Fixed navbar -->
 <div class="navbar navbar-custom navbar-inverse navbar-static-top" id="nav">
@@ -68,22 +48,16 @@
           <li><a href="#section3">About</a></li>
           <li><a href="#section5">Contact</a></li>
           <li><a href="#section6">Feedback</a></li>
-<!--          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li><a href="#">Separated link</a></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>
-          </li>-->
         </ul>
       </div><!--/.nav-collapse -->
     </div><!--/.container -->
 </div><!--/.navbar -->
     </header>
-
+<div class="container">
+     <div class="page-header text-center">
+      <h1>Welcome to Dentists from another universe.</h1>
+    </div>
+</div>
 <script src="web/js/jquery-2.1.3.js"></script>
 <script src="web/js/bootstrap.min.js"></script>
   <div class="container">
@@ -99,34 +73,34 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-        <img src="images/slider/01.jpg" alt="First" width="inherit" height="145">
+        <img src="images/slider/01.jpg" alt="First" width="inherit" height="inherit">
         <div class="carousel-caption">
-          <h3>First</h3>
-          <p>This is the first ever picture in my carousel.</p>
+          <h3>Team of professionals</h3>
+          <p>Our team bring you the uncompromising care.</p>
         </div>
       </div>
 
     <div class="item">
-        <img src="images/slider/02.jpg" alt="Second" width="inherit" height="145">
+        <img src="images/slider/02.jpg" alt="Second" width="inherit" height="inherit">
         <div class="carousel-caption">
-          <h3>Second</h3>
-          <p>Hi, this si the second picture in carousel.</p>
+          <h3>State of the Art equipment</h3>
+          <p>We are always trying provide the best equipment available on the market.</p>
         </div>
       </div>
 
     <div class="item">
-        <img src="images/slider/03.jpg" alt="Third" width="inherit" height="145">
+        <img src="images/slider/03.jpg" alt="Third" width="inherit" height="inherit">
         <div class="carousel-caption">
-          <h3>Third</h3>
-          <p>Hi, this si the third picture in carousel.</p>
+          <h3>Comfort</h3>
+          <p>We care about comfort of our patients.</p>
         </div>
       </div>
 
     <div class="item">
-        <img src="images/slider/04.jpg" alt="Fourth" width="inherit" height="145">
+        <img src="images/slider/04.jpg" alt="Fourth" width="inherit" height="inherit">
         <div class="carousel-caption">
-          <h3>Fourth</h3>
-          <p>Hi, this si the fourth picture in carousel.</p>
+          <h3>Family friendly</h3>
+          <p>Despite our location in the center of Bratislava, our services are affordable for families.</p>
         </div>
       </div>
   </div>
@@ -135,6 +109,7 @@
   .carousel-inner > .item > a > img {
       width: 100%;
       margin: inherit;
+      height: 600px;
   }
   </style>
   <!-- Left and right controls -->
@@ -149,14 +124,10 @@
 </div>
 </div> 
 <!-- Begin page content -->
-<div class="divider" id="section1"></div>
+<!--<div class="divider"></div>-->
   
 <div class="container" id="section1">
-  <div class="col-sm-10 col-sm-offset-1">
-    <div class="page-header text-center">
-      <h1>Thank you for choosing Dentists from another universe.</h1>
-    </div>
-   
+  <div class="col-sm-10 col-sm-offset-1"> 
     <p class="lead text-center">
         We welcome you to our dental practice located in the heart of downtown <mark>Bratislava</mark>.
     </p>
@@ -198,22 +169,13 @@
    
 <div class="container" id="section3">
   	<div class="col-sm-8 col-sm-offset-2 text-center">
-            
-      <a href="panorama_viewer-master/demo/demo.html" class="btn btn-info" role="button">Here you can see panorama view of our dental clinic.</a>    
-      <h1>Mobile-first + Responsive</h1>
+      <h1>About our clinic</h1>       
+      <a href="panorama_viewer-master/demo/demo.html" class="btn btn-info" role="button">Here you can see panorama view of our dental clinic.</a>
       
       <p>
-      Instead of creating a unique version of the webpage for each desktop, mobile &amp; 
-      tablet, you can now create one design that works on all devices, browsers &amp; 
-      resolutions. Your designs will be future ready when a new table or phone size 
-      comes in the market, your designs will adapt itself and fit to the new screen size.
+      Something about our clinic.
       </p>
       
-      <hr>
-      
-      <img src="/assets/example/bg_smartphones.jpg" class="img-responsive">
-      
-      <hr>
   	</div><!--/col-->
 </div><!--/container-->
 
@@ -242,10 +204,10 @@
 	   <div class="col-sm-4 col-xs-6">
       
         <div class="panel panel-default">
-          <div><img src="filling.jpg" class="img-responsive"></div>
+          <div><img src="images/services/filling.jpg" class="img-responsive"></div>
           <div class="panel-body">
             <p class="lead">Filling</p>
-            <p>Placing an amalgam filling (mercury, silver and other base metals) 
+            <p class="well">Placing an amalgam filling (mercury, silver and other base metals) 
                 is a typical procedure for fixing cavities.</p>
             
             
@@ -256,11 +218,11 @@
       <div class="col-sm-4 col-xs-6">
       
       	<div class="panel panel-default">
-          <div class="panel-thumbnail"><img src="inlay_onlay.jpg" 
+            <div class="panel-thumbnail"><img src="images/services/inlay_onlay.jpg" 
                                             class="img-responsive"></div>
           <div class="panel-body">
             <p class="lead">Inlays and onlays</p>
-            <p>Inlays and onlays are restorations used to repair teeth with mild to 
+            <p class="well">Inlays and onlays are restorations used to repair teeth with mild to 
                 moderate decay or damage. They are a good solution when the area to 
                 restore is too large for a filling, yet not so extensive that a dental 
                 crown is required. </p>
@@ -273,11 +235,11 @@
       <div class="col-sm-4 col-xs-6">
       
       	<div class="panel panel-default">
-          <div class="panel-thumbnail"><img src="bridge.jpg" 
+          <div class="panel-thumbnail"><img src="images/services/bridge.jpg" 
                                             class="img-responsive"></div>
           <div class="panel-body">
             <p class="lead">Dental bridge</p>
-            <p>A dental bridge from our clinic may be suitable for you if you’re missing one or more teeth. </p>
+            <p class="well">A dental bridge from our clinic may be suitable for you if you’re missing one or more teeth. </p>
             
             
           </div>
@@ -289,11 +251,11 @@
         <div class="col-sm-4 col-xs-6">
       
       	<div class="panel panel-default">
-          <div class="panel-thumbnail"><img src="crown.jpg" 
+          <div class="panel-thumbnail"><img src="images/services/crown.jpg" 
                                             class="img-responsive"></div>
           <div class="panel-body">
             <p class="lead">Dental crown</p>
-            <p>A dental crown (commonly known as a cap) is a dental restoration that 
+            <p class="well">A dental crown (commonly known as a cap) is a dental restoration that 
                 replaces the outer surface of your tooth with ceramic material and/or gold. 
                 It is commonly used to restore a tooth when it is too damaged to support a 
                 filling, inlay or only.  </p>
@@ -338,7 +300,7 @@
           <input type="email" class="form-control" name="email" placeholder="Email" required="">
           </div>
           <div class="col-xs-5">
-          <input type="email" class="form-control" name="phone" placeholder="Phone" required="">
+              <input type="tel" class="form-control" name="phone" placeholder="Phone" required="">
           </div>
       </div>
       <div class="row form-group">
@@ -385,38 +347,9 @@
   </div>
 </div>
 
-<div class="divider" id="section6"></div>
-  
-<div class="container">
-  <div class="col-sm-10 col-sm-offset-1">
-    
-    <p class="lead text-center">
-      Our feedback:
-    </p>
-    <p class="text-center">
-      blablabla
-    </p>
-  </div>
-</div>
-
 <div class="container">
   	<div class="col-sm-8 col-sm-offset-2 text-center">
       <h2>Thank you for visiting our site</h2>
-      
-      <hr>
-      <h4>
-        We love templates. We love Bootstrap.
-      </h4>
-      <p>Get more free templates like this at the <a href="http://bootply.com">Bootstrap Playground</a>
-          , Bootply.</p>
-      <hr>
-      <ul class="list-inline center-block">
-        <li><a href="http://facebook.com/bootply"><img src="/assets/example/soc_fb.png"></a></li>
-        <li><a href="http://twitter.com/bootply"><img src="/assets/example/soc_tw.png"></a></li>
-        <li><a href="http://google.com/+bootply"><img src="/assets/example/soc_gplus.png"></a></li>
-        <li><a href="http://pinterest.com/in1"><img src="/assets/example/soc_pin.png"></a></li>
-      </ul>
-      
   	</div><!--/col-->
 </div><!--/container-->
   
