@@ -6,10 +6,10 @@ class Admin
     private $adminPassword = 'admin';
     private $errors = array();
 // HEAD
-    private $baseUrl = 'http://localhost/PHPLINUX/PhpProject/#section1/admin/';
+    private $baseUrl = 'http://localhost/PHPLINUX/PhpProject/admin/';
 
 //=======
-    private $baseUrl = 'http://localhost/aptech/web/admin/';
+ //   private $baseUrl = 'http://localhost/aptech/web/admin/';
 //>>>>>>> origin/master
     public function __construct() {
         if(!$this->isAdmin()) {
