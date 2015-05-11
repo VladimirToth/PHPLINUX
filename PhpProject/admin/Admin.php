@@ -8,9 +8,8 @@ class Admin
 // HEAD
     private $baseUrl = 'http://localhost/PHPLINUX/PhpProject/admin/';
 
-//=======
+//
  //   private $baseUrl = 'http://localhost/aptech/web/admin/';
-//>>>>>>> origin/master
     public function __construct() {
         if(!$this->isAdmin()) {
             $this->checkAdmin();

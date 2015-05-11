@@ -37,12 +37,12 @@
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Appointment
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
-              <li><a href="appointment.php">Filling</a></li>
-            <li><a href="#">Inlays and Onlays</a></li>
-            <li><a href="#">Dental bridge</a></li>
-            <li><a href="#">Dental crown</a></li>
-            <li><a href="#">Root canal therapy</a></li>
-            <li><a href="#">Teeth whitening</a></li>
+              <li><a href="appointment.php#section1">Filling</a></li>
+            <li><a href="appointment.php#section1">Inlays and Onlays</a></li>
+            <li><a href="appointment.php#section1">Dental bridge</a></li>
+            <li><a href="appointment.php#section1">Dental crown</a></li>
+            <li><a href="appointment.php#section1">Root canal therapy</a></li>
+            <li><a href="appointment.php#section1">Teeth whitening</a></li>
           </ul>
         </li>
           <!--<li><a href="appointment.php">Appointment</a></li>-->
