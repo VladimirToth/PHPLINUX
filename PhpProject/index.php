@@ -38,11 +38,11 @@
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
               <li><a href="appointment.php#section1">Filling</a></li>
-            <li><a href="appointment.php#section1">Inlays and Onlays</a></li>
-            <li><a href="appointment.php#section1">Dental bridge</a></li>
-            <li><a href="appointment.php#section1">Dental crown</a></li>
-            <li><a href="appointment.php#section1">Root canal therapy</a></li>
-            <li><a href="appointment.php#section1">Teeth whitening</a></li>
+            <li><a href="appointment.php#section2">Inlays and Onlays</a></li>
+            <li><a href="appointment.php#section3">Dental bridge</a></li>
+            <li><a href="appointment.php#section4">Dental crown</a></li>
+            <li><a href="appointment.php#section5">Root canal therapy</a></li>
+            <li><a href="appointment.php#section6">Teeth whitening</a></li>
           </ul>
         </li>
           <!--<li><a href="appointment.php">Appointment</a></li>-->
@@ -294,7 +294,7 @@
       blablabla
     </p>
   </div>
-</div>
+    
 
 <div class="container">
   	<div class="col-sm-8 col-sm-offset-2 text-center">

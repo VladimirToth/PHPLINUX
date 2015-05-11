@@ -41,10 +41,10 @@
           <ul class="dropdown-menu">
               <li><a href="appointment.php#section1">Filling</a></li>
             <li><a href="appointment.php#section1">Inlays and Onlays</a></li>
-            <li><a href="#">Dental bridge</a></li>
-            <li><a href="#">Dental crown</a></li>
-            <li><a href="#">Root canal therapy</a></li>
-            <li><a href="#">Teeth whitening</a></li>
+            <li><a href="appointment.php#section1">Dental bridge</a></li>
+            <li><a href="appointment.php#section1">Dental crown</a></li>
+            <li><a href="appointment.php#section1">Root canal therapy</a></li>
+            <li><a href="appointment.php#section1">Teeth whitening</a></li>
           </ul>
         </li>
           <li><a href="index.php#section1"><strong>Welcome</strong></a></li>
@@ -53,71 +53,56 @@
           <li><a href="index.php#section6">Feedback</a></li>
         </ul>
       </div>
-    </div>
-    
+    </div> 
 </div>
 
-<!--<div class="container">
-  <nav class="navbar navbar-default" role="navigation" id="topmenu">
-    <ul class="nav navbar-nav">
-      <li class="dropdown">
-        <a href="#" data-toggle="collapse" data-target="#one">One</a>
-      </li>
-      <li class="dropdown">
-        <a href="#" data-toggle="collapse" data-target="#two">Two</a>
-      </li>
-      <li class="dropdown">
-        <a href="#" data-toggle="collapse" data-target="#three">Three</a>
-      </li>
-    </ul>
-  </nav>
-</div>-->
-
-<?php 
-   // navbar();
-?>
-
-<!--<div class="container">
-  <nav class="navbar navbar-default" role="navigation" id="submenu">
-    <ul class="nav navbar-nav collapse" id="one">
-      <li><a href="#" id="">One sub 1</a></li>
-      <li><a href="#" id="">One sub 2</a></li>
-      <li><a href="#" id="">One sub 3</a></li>
-      <li><a href="#" id="">One sub 4</a></li>
-    </ul>
-  </nav>
-</div> -->
     </header>
 
 <!--Begin page content--> 
-
 <div class="container" id="section1">
-<form>
-  <div class="form-group">
-    <label for="service">Service</label>
-    <br>
-    <label for="serviceName">dsa</label>
+    <?php
+   
+    ?>
+</div>
+
+<div class="divider"></div>
+
+<div class="container" id="section2">
+       <form method="post">
+  <div class="dropdown">
+    <label>
+        <select name="dropdown" class="textfields" id="nameServices">
+            <option>Choose service</option>
+            <?php
+            
+            
+            ?>
+    </label>
   </div>
   <div class="form-group">
-    <label for="InputEmail">Email address</label>
+    <label for="exampleInputEmail">Email address</label>
     <input type="email" class="form-control" id="InputEmail" placeholder="Enter email">
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <label for="exampleInputPhone">Phone number</label>
+    <input type="tel" class="form-control" id="InputPhone" placeholder="Enter phone number">
   </div>
   <div class="form-group">
-    <label for="exampleInputFile">File input</label>
-    <input type="file" id="exampleInputFile">
-    <p class="help-block">Example block-level help text here.</p>
+    <label for="exampleInputDate">Date</label>
+    <input type="date" id="InputDate">
   </div>
-  <div class="checkbox">
+  <div class="dropdown">
     <label>
-      <input type="checkbox"> Check me out
+        <select name="dropdown" class="textfields" id="nameDoctors">
+            <option>Choose dentist</option>
+            <?php
+            
+            ?>
     </label>
   </div>
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
+</div>
 </div>
 
 
