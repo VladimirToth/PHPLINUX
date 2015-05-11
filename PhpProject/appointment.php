@@ -40,11 +40,11 @@
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
               <li><a href="appointment.php#section1">Filling</a></li>
-            <li><a href="appointment.php#section1">Inlays and Onlays</a></li>
-            <li><a href="#">Dental bridge</a></li>
-            <li><a href="#">Dental crown</a></li>
-            <li><a href="#">Root canal therapy</a></li>
-            <li><a href="#">Teeth whitening</a></li>
+            <li><a href="appointment.php#section2">Inlays and Onlays</a></li>
+            <li><a href="appointment.php#section3">Dental bridge</a></li>
+            <li><a href="appointment.php#section4">Dental crown</a></li>
+            <li><a href="appointment.php#section5">Root canal therapy</a></li>
+            <li><a href="appointment.php#section6">Teeth whitening</a></li>
           </ul>
         </li>
           <li><a href="index.php#section1"><strong>Welcome</strong></a></li>
@@ -57,36 +57,6 @@
     
 </div>
 
-<!--<div class="container">
-  <nav class="navbar navbar-default" role="navigation" id="topmenu">
-    <ul class="nav navbar-nav">
-      <li class="dropdown">
-        <a href="#" data-toggle="collapse" data-target="#one">One</a>
-      </li>
-      <li class="dropdown">
-        <a href="#" data-toggle="collapse" data-target="#two">Two</a>
-      </li>
-      <li class="dropdown">
-        <a href="#" data-toggle="collapse" data-target="#three">Three</a>
-      </li>
-    </ul>
-  </nav>
-</div>-->
-
-<?php 
-   // navbar();
-?>
-
-<!--<div class="container">
-  <nav class="navbar navbar-default" role="navigation" id="submenu">
-    <ul class="nav navbar-nav collapse" id="one">
-      <li><a href="#" id="">One sub 1</a></li>
-      <li><a href="#" id="">One sub 2</a></li>
-      <li><a href="#" id="">One sub 3</a></li>
-      <li><a href="#" id="">One sub 4</a></li>
-    </ul>
-  </nav>
-</div> -->
     </header>
 
 <!--Begin page content--> 
