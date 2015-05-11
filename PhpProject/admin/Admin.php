@@ -28,6 +28,9 @@ class Admin
             case 'staff':
                 $this->displayStaff();
                 break;
+            case 'appointment':
+                $this->displayAppointments();
+                break;
             case 'logout':
                 $this->Logout();
                 break;
@@ -82,7 +85,7 @@ class Admin
             }
             $services = $db->query("
             SELECT services.*
-            FROM dentist AS services
+            FROM dentist AS Services
             WHERE services.ServiceID = " . $_GET['ServiceID']);
             $service = mysqli_fetch_assoc($services);
   //          $optionMan = $this->getOptions($product['id_man'],'manufacture','id_man','name');
@@ -91,28 +94,37 @@ class Admin
                 <form method="post" action="?page=editservice&id='.$_GET['ServiceID'].'">
                     <table>
                         <tr>
-                            <td>Name: </td>
-                            <td><input type="text" name="name" value="'.$service['ServiceName'].'" /></td>
+                            <td>Service Name: </td>
+                            <td><input type="text" name="ServiceName" value="'.$service['ServiceName'].'" /></td>
                         </tr>
                         <tr>
                             <td>Description: </td>
-                            <td><textarea name="description">'.$service['Description'].'</textarea></td>
+                            <td><textarea name="Description">'.$service['Description'].'</textarea></td>
                         </tr>
                         <tr>
-                            <td>Price: </td>
-                            <td><input type="text" name="price" value="'.$service['ServicePrice'].'" /></td>
+                            <td>Service Price: </td>
+                            <td><input type="text" name="ServicePrice" value="'.$service['ServicePrice'].'" /></td>
                         </tr>
                         <tr>
-                            <td>Manufacturer: </td>
-                            <td><select name="manufacturer">'.$optionMan.'</select></td>
+                            <td>Discount: </td>
+                            <td><input type="text" name="Discount" value="'.$service['Discount'].'" /></td>
                         </tr>
                         <tr>
-                            <td>Category: </td>
-                            <td><select name="category">'.$optionCat.'</select></td>
+                            <td>Discount Start Date: </td>
+                            <td><input type="text" name="DiscountStartDate" value="'.$service['DiscountStartDate'].'" /></td>
+                        </tr>
+                        <tr>
+                            <td>Discount End Date: </td>
+                            <td><input type="text" name="DiscountEndDate" value="'.$service['DiscountEndDate'].'" /></td>
+                        </tr>
+                        <tr>
+                            <td>Image: </td>
+                            <td><input type="text" name="Image" value="'.$service['Image'].'" /></td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td><input type="hidden" name="plid" value="'.$product['plid'].'" /><input type="hidden" name="id_cat_pro" value="'.$product['id_cat_pro'].'" /><input type="submit" value="Update" /></td>
+//                            <td><input type="hidden" name="plid" value="'.$service['ServiceID'].'" /><input type="hidden" name="id_cat_pro" value="'.$product['id_cat_pro'].'" />
+                            <input type="submit" value="Update" /></td>
                         </tr>
                     </table>
                 </form>
@@ -162,9 +174,9 @@ class Admin
             $email = $_POST['Email'];
             $db = new Db();
             // vlozit staff membera
-        //    $db->query("INSERT INTO 'staff' ('Name', 'JobTitle', 'Image', 'Public', 'Qualifications', 'WorkingDaysandTimes', 'Email')
-        //    VALUES ('$name', '$title', '$image', '$public', '$qual', '$work', '$email');");  
-            $db->query("INSERT INTO 'staff' VALUES (NULL, '$name', '$title', '$image', '$public', '$qual', '$work', '$email');");  
+            $db->query("INSERT INTO 'staff' ('ID', 'Name', 'JobTitle', 'Image', 'Public', 'Qualifications', 'WorkingDaysandTimes', 'Email')
+            VALUES ('null', '$name', '$title', '$image', '$public', '$qual', '$work', '$email');");  
+        //    $db->query("INSERT INTO 'staff' VALUES ('null', '$name', '$title', '$image', '$public', '$qual', '$work', '$email');");  
             // vytiahnut posledne ID
          //   $lastIds = $db->query("SELECT * FROM eshop ORDER BY id_product DESC;");
          //   $lastId = mysqli_fetch_assoc($lastIds);
@@ -334,11 +346,45 @@ class Admin
         }
         echo '</table>';
     }
+    
+     private function displayAppointments() {
+        $db = new Db();
+        $appoint = $db->query("
+            SELECT *
+            FROM dentist.appointments AS Appointments
+        ");
+        echo '<div>
+        <a href="?page=addappointment" class="btn btn-primary">Add Appointment</a>
+        </div>';
+        echo '<table class="table table-striped">';
+        echo '<tr>';
+        echo '<th>AppID</th><th>UserEmail</th><th>ServiceID</th><th>DoctorID</th><th>Date</th><th>Time</th><th>Price</th><th>PaymentMethod</th><th>PaymentDay</th><th>Action</th>';
+        echo '</tr>';
+        while($app = mysqli_fetch_array($appoint, MYSQL_ASSOC)) {
+            echo '<tr>
+                <td>'.$app['AppID'].'</td>
+                <td>'.$app['UserMail'].'</td>
+                <td>'.$app['ServiceID'].'</td>
+                <td>'.$app['DoctorID'].'</td>
+                <td>'.$app['Date'].'</td>
+                <td>'.$app['Time'].'</td>
+                <td>'.$app['Price'].'</td>
+                <td>'.$app['PaymentMethod'].'</td>
+                <td>'.$app['PaymentDay'].'</td>
+                <td>
+                <a href="?page=editappointment&id='.$app['AppID'].'" class="btn btn-default">Edit</a>
+                <a href="?page=deletappointment&id='.$app['AppID'].'" class="btn btn-default">Delete</a>
+                </td>
+            </tr>';
+        }
+        echo '</table>';
+    }
+    
     private function displayNav() {
         echo '
-        <a href="?page=appointments" class="btn btn-primary col-sm-3">Appointments</a>
         <a href="?page=services" class="btn btn-primary col-sm-3">Services</a>
         <a href="?page=staff" class="btn btn-primary col-sm-3">Staff</a>
+        <a href="?page=appointment" class="btn btn-primary col-sm-3">Appointments</a>
         <a href="?page=logout" class="btn btn-primary col-sm-3">Log out</a>
         ';
     }

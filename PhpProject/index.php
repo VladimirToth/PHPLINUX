@@ -57,7 +57,7 @@
     </header>
 <div class="container" id="section1">
      <div class="page-header text-center">
-      <h1>Welcome to Dentists from another universe.</h1>
+      <h1>Welcome to Dentists from another Universe.</h1>
     </div>
 </div>
 <script src="web/js/jquery-2.1.3.js"></script>
@@ -145,17 +145,14 @@
       service, we've chosen instead to keep our practice just the opposite: <mark>calm, relaxed, 
       and incredibly comfortable</mark>. We are always accepting new patients and referrals.
     </p></br>
-    <p class="text-justify">
-      We are conveniently located in the financial district of Downtown Bratislava inside J&T Building
-      in Bevanda Tower 115. We have convenient extended hours 
-      and caring team members to make your experience <mark>the best it can be!</mark>
-    </p>
   </div>
 </div>
     
 <div class="divider" id="section2"></div>
 <div class="container">     
-
+<div class="col-sm-8 col-sm-offset-2 text-center">
+      <h1>Our Staff</h1> 
+</div>
 </div>
 
 <section class="bg-1">
@@ -173,10 +170,20 @@
   	<div class="col-sm-8 col-sm-offset-2 text-center">
       <h1>About our clinic</h1>       
       <a href="panorama_viewer-master/demo/demo.html" class="btn btn-info" role="button">Here you can see panorama view of our dental clinic.</a>
-      
-      <p>
-      Something about our clinic.
+      </br>
+      <p class="text-justify">
+       Our clinic was designed entirely by us, with you in mind. We take your needs seriously 
+       and have created an ambiance that we hope you'll enjoy. 
+       If you need emergency dental care, Dr. Tomanova and Dr. Kolesik aim to see clients within 24 hours 
+       (within clinic hours), and often on the same day. We know that your time is valuable, so we manage 
+       appointments carefully and allow you to return to your day on time. 
+       Our clinic is also wheelchair accessible.
       </p>
+      <p class="text-justify">
+      We are conveniently located in the financial district of Downtown Bratislava inside J&T Building
+      in Bevanda Tower 115. We have convenient extended hours 
+      and caring team members to make your experience <mark>the best it can be!</mark>
+    </p>
       
   	</div><!--/col-->
 </div><!--/container-->
@@ -260,7 +267,7 @@
   <div class="col-sm-3 pull-right">
 
       <address>
-        <strong>Dentist from other World, D.D.S.</strong><br>
+        <strong>Dentists from another Universe, D.D.S.</strong><br>
         Panonska cesta 17<br>
         Bratislava, 851 04<br>
         Slovakia, Central Europe<br>

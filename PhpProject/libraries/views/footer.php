@@ -4,7 +4,7 @@
      <div class="col-sm-4">
         <p class="text-muted">
         <address class="text-muted">
-        <strong>Dentist from another Universe, D.D.S.</strong><br>
+        <strong>Dentists from another Universe, D.D.S.</strong><br>
         <strong>Phone:</strong> (02) 55 56 412
         <strong>Email:</strong>
         <a href="mailto:trainscheduleconfirmation@gmail.com">dentist@example.com</a>
