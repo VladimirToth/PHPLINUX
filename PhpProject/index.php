@@ -287,7 +287,7 @@
       blablabla
     </p>
   </div>
-</div>
+    
 
 <div class="container">
   	<div class="col-sm-8 col-sm-offset-2 text-center">
