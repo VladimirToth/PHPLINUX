@@ -11,6 +11,7 @@ class Db {
     public function query($sql) {
         return mysqli_query($this->link, $sql);
     }
+    
     public function __destruct() {
         mysqli_close($this->link);
     }

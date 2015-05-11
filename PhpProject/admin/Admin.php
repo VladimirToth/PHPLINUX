@@ -30,64 +30,78 @@ class Admin
                 $this->displayStaff();
                 break;
             case 'logout':
-                $this->displayLogout();
+                $this->Logout();
                 break;
-            case 'editproduct':
-                $this->editProduct();
+            case 'editservice':
+                $this->editService();
                 break;
-            case 'addproduct':
-                $this->addProduct();
-                $this->displayAddProduct();
+            case 'editstaff':
+                $this->editStaff();
+                break;
+            case 'addservice':
+                $this->displayAddService();
+                $this->addService();
+                break;
+            case 'addstaff':
+                $this->displayAddStaff();
+                $this->addStaff();
                 break;
             default:
                 $this->displayServices();
         }
     }
-    private function editProduct() {
-        if(isset($_GET['id'])) {
+    private function editService() {
+        if(isset($_GET['ServiceID'])) {
             $db = new Db();
-            if(isset($_POST['name']) && isset($_POST['description']) && isset($_POST['price'])) {
+            if(isset($_POST['ServiceName']) && isset($_POST['Description']) && isset($_POST['ServicePrice'])) {
                 $db->query("
-                    UPDATE eshop_lang SET
-                    name = '".$_POST['name']."',
-                    description = '".$_POST['description']."'
-                    WHERE id = ".$_POST['plid'].";
+                    UPDATE services SET
+                    ServiceName = '".$_POST['ServiceName']."',
+                    Description = '".$_POST['Description']."',
+                    Discount = '".$_POST['Discount']."',
+                    DiscountStartDate = '".$_POST['DiscountStartDate']."',
+                    DiscountEndDate = '".$_POST['DiscountEndDate']."',
+                    Image = '".$_POST['DiscountEndDate']."',
+                    WHERE ServiceID = ".$_GET['ServiceID'].";
                 ");
-                $db->query("
-                    UPDATE eshop SET
-                    price = ".$_POST['price'].",
-                    id_man = ".$_POST['manufacturer']."
-                    WHERE id_product = ".$_GET['id'].";
-                ");
-                $db->query("
-                    UPDATE category_products SET
-                    id_cat = ".$_POST['category']."
-                    WHERE id = ".$_POST['id_cat_pro'].";
-                ");
+//                $db->query("
+//                    UPDATE eshop SET
+//                    price = ".$_POST['price'].",
+//                 );
+////                $db->query("
+//                    UPDATE category_products SET
+//                    id_cat = ".$_POST['category']."
+//                    WHERE id = ".$_POST['id_cat_pro'].";
+//                ");   id_man = ".$_POST['manufacturer']."
+//                    WHERE id_product = ".$_GET['id'].";
+//                ");
+//                $db->query("
+//                    UPDATE category_products SET
+//                    id_cat = ".$_POST['category']."
+//                    WHERE id = ".$_POST['id_cat_pro'].";
+//                ");
             }
-            $products = $db->query("
-            SELECT products.*, pl.description, pl.name, cp.id_cat AS id_category, pl.id_lang, pl.id AS plid, cp.id AS id_cat_pro
-            FROM eshop AS products
-            LEFT JOIN eshop_lang AS pl ON products.id_product = pl.id_product
-            LEFT JOIN category_products AS cp ON products.id_product = cp.id_prod
-            WHERE products.id_product = " . $_GET['id']);
-            $product = mysqli_fetch_assoc($products);
-            $optionMan = $this->getOptions($product['id_man'],'manufacture','id_man','name');
-            $optionCat = $this->getOptions($product['id_category'],'category','id_category','category_name');
+            $services = $db->query("
+            SELECT services.*
+            FROM dentist AS services
+            WHERE services.ServiceID = " . $_GET['ServiceID']);
+            $service = mysqli_fetch_assoc($services);
+  //          $optionMan = $this->getOptions($product['id_man'],'manufacture','id_man','name');
+ //           $optionCat = $this->getOptions($product['id_category'],'category','id_category','category_name');
             echo '
-                <form method="post" action="?page=editproduct&id='.$_GET['id'].'">
+                <form method="post" action="?page=editservice&id='.$_GET['ServiceID'].'">
                     <table>
                         <tr>
                             <td>Name: </td>
-                            <td><input type="text" name="name" value="'.$product['name'].'" /></td>
+                            <td><input type="text" name="name" value="'.$service['ServiceName'].'" /></td>
                         </tr>
                         <tr>
                             <td>Description: </td>
-                            <td><textarea name="description">'.$product['description'].'</textarea></td>
+                            <td><textarea name="description">'.$service['Description'].'</textarea></td>
                         </tr>
                         <tr>
                             <td>Price: </td>
-                            <td><input type="text" name="price" value="'.$product['price'].'" /></td>
+                            <td><input type="text" name="price" value="'.$service['ServicePrice'].'" /></td>
                         </tr>
                         <tr>
                             <td>Manufacturer: </td>
@@ -109,30 +123,65 @@ class Admin
             $this->displayErrors();
         }
     }
-    private function addProduct() {
-        if(isset($_POST['price']) && isset($_POST['description']) && isset($_POST['name'])) {
-            $price = (float)$_POST['price'];
-            $description = $_POST['description'];
-            $name = $_POST['name'];
-            $manufacturer = $_POST['manufacturers'];
-            $language = $_POST['languages'];
-            $category = $_POST['category'];
+    private function addService() {
+        if(isset($_POST['ServicePrice']) && isset($_POST['Description']) && isset($_POST['ServiceName'])) {
+            $name = $_POST['ServiceName'];
+            $description = $_POST['Description'];
+            $price = (float)$_POST['ServicePrice'];
+            $discount = $_POST['Discount'];
+            $startDate = $_POST['DiscountStartDate'];
+            $endDate = $_POST['DiscountEndDate'];
+            $image = $_POST['Image'];
             $db = new Db();
-            // vlozit produkt
-            $db->query("INSERT INTO eshop(price,id_man)
-            VALUES ($price,$manufacturer);");
+            // vlozit service
+            $db->query("INSERT INTO 'services' ('ServiceName', 'Description', 'ServicePrice', 'Discount', 'DiscountStartDate', 'DiscountEndDate', 'Image')
+           VALUES ($name,$description, $price, $discount, $startDate, $endDate, $image);");
             // vytiahnut posledne ID
-            $lastIds = $db->query("SELECT * FROM eshop ORDER BY id_product DESC;");
-            $lastId = mysqli_fetch_assoc($lastIds);
+         //   $lastIds = $db->query("SELECT * FROM eshop ORDER BY id_product DESC;");
+         //   $lastId = mysqli_fetch_assoc($lastIds);
             // vlozit produkt lang
-            $db->query("INSERT INTO eshop_lang(id_product,id_lang,description,name)
-            VALUES (".$lastId['id_product'].",$language,'$description', '$name');");
+        //    $db->query("INSERT INTO eshop_lang(id_product,id_lang,description,name)
+        //    VALUES (".$lastId['id_product'].",$language,'$description', '$name');");
             // vlozit kategoriu
-            $db->query("INSERT INTO category_products(id_cat,id_prod)
-            VALUES ($category,".$lastId['id_product'].");
-            ");
+       //     $db->query("INSERT INTO category_products(id_cat,id_prod)
+       //     VALUES ($category,".$lastId['id_product'].");
+            
+        }else {
+            array_push($this->errors, "Data missing!");
+            $this->displayErrors();
         }
     }
+    
+     private function addStaff() {
+        if(isset($_POST['Name']) && isset($_POST['Qualifications']) && isset($_POST['JobTitle'])) {
+            $name = $_POST['Name'];
+            $title = $_POST['JobTitle'];
+            $image = $_POST['Image'];
+            $public = $_POST['Public'];
+            $qual = $_POST['Qualifications'];
+            $work = $_POST['WorkingDaysandTimes'];
+            $email = $_POST['Email'];
+            $db = new Db();
+            // vlozit staff membera
+        //    $db->query("INSERT INTO 'staff' ('Name', 'JobTitle', 'Image', 'Public', 'Qualifications', 'WorkingDaysandTimes', 'Email')
+        //    VALUES ('$name', '$title', '$image', '$public', '$qual', '$work', '$email');");  
+            $db->query("INSERT INTO 'staff' VALUES (NULL, '$name', '$title', '$image', '$public', '$qual', '$work', '$email');");  
+            // vytiahnut posledne ID
+         //   $lastIds = $db->query("SELECT * FROM eshop ORDER BY id_product DESC;");
+         //   $lastId = mysqli_fetch_assoc($lastIds);
+            // vlozit produkt lang
+        //    $db->query("INSERT INTO eshop_lang(id_product,id_lang,description,name)
+         //   VALUES (".$lastId['id_product'].",$language,'$description', '$name');");
+            // vlozit kategoriu
+          //  $db->query("INSERT INTO category_products(id_cat,id_prod)
+          //  VALUES ($category,".$lastId['id_product'].");
+            
+        }else {
+            array_push($this->errors, "Data missing!");
+            $this->displayErrors();
+        }
+    }
+    
     private function getOptions($idSelected = '', $tableName, $idColName, $colValueName) {
         $db = new Db();
         $categories = $db->query("SELECT * FROM $tableName");
@@ -147,34 +196,70 @@ class Admin
         }
         return $optionCat;
     }
-    private function  displayAddProduct() {
+    private function  displayAddService() {
         // zobrazit formular pre
         // 1. cena
         // 2. dropdown s vyrobcami
         // 3. dropdown s jazykmi
         // 4. description
         // 5. name
-        $optionMan = $this->getOptions('','manufacture','id_man','name');
-        $optionLan = $this->getOptions('','languages','id_lang','name');
-        $optionCat = $this->getOptions('','category','id_category','category_name');
-        echo '
-            <form method="post" action="?page=addproduct">
-            <input type="text" name="price" placeholder="cena"/>
-            <input type="text" name="description" placeholder="popis"/>
-            <input type="text" name="name" placeholder="meno"/>
-            <SELECT name="manufacturers">
-                '.$optionMan.'
-            </SELECT>
-            <SELECT name="languages">
-                '.$optionLan.'
-            </SELECT>
-            <SELECT name="category">
-                '.$optionCat.'
-            </SELECT>
-            <input type="submit" value="submit"/>
+    //    $optionMan = $this->getOptions('','manufacture','id_man','name');
+    //    $optionLan = $this->getOptions('','languages','id_lang','name');
+    //    $optionCat = $this->getOptions('','category','id_category','category_name');
+        echo '<div class="lead text-center">Add Service: </div></br>
+            <form method="post" action="?page=addservice">
+            <label class="col-sm-2 control-label">ServicePrice:</label>
+            <input type="text" name="ServicePrice" placeholder="service price"/></br>
+            <label class="col-sm-2 control-label">Description:</label>
+            <input type="textarea" name="Description" placeholder="description"/></br>
+            <label class="col-sm-2 control-label">ServiceName:</label>
+            <input type="text" name="ServiceName" placeholder="service name"/></br>
+            <label class="col-sm-2 control-label">Discount:</label>
+            <input type="text" name="Discount" placeholder="percentage"/></br>
+            <label class="col-sm-2 control-label">DiscountStartDate:</label>
+            <input type="text" name="DiscountStartDate" placeholder="date format YYYY-MM-DD"/></br>
+            <label class="col-sm-2 control-label">DiscountEndDate:</label>
+            <input type="text" name="DiscountEndDate" placeholder="date format YYYY-MM-DD"/></br>
+            <label class="col-sm-2 control-label">Image:</label>
+            <input type="text" name="Image" placeholder="images/services/yourImage.jpg"/></br>
+            <label class="col-sm-2 control-label">Confirm:</label>
+            <input type="submit" value="Add Service"/>
             </form>
         ';
     }
+    
+     private function  displayAddStaff() {
+        // zobrazit formular pre
+        // 1. cena
+        // 2. dropdown s vyrobcami
+        // 3. dropdown s jazykmi
+        // 4. description
+        // 5. name
+    //    $optionMan = $this->getOptions('','manufacture','id_man','name');
+    //    $optionLan = $this->getOptions('','languages','id_lang','name');
+    //    $optionCat = $this->getOptions('','category','id_category','category_name');
+        echo '<div class="lead text-center">Add Staff Member: </div></br>
+            <form method="post" action="?page=addstaff">
+            <label class="col-sm-2 control-label">Name:</label>
+            <input type="text" name="Name" placeholder="name"/></br>
+            <label class="col-sm-2 control-label">Job Title:</label>
+            <input type="text" name="JobTitle" placeholder="job title"/></br>
+            <label class="col-sm-2 control-label">Image:</label>
+            <input type="text" name="Image" placeholder="format: images/staffs/image.jpg"/></br>
+            <label class="col-sm-2 control-label">Public:</label>
+            <input type="text" name="Public" placeholder="phone number"/></br>
+            <label class="col-sm-2 control-label">Qualifications:</label>
+            <input type="text" name="Qualifications" placeholder="carreer and school"/></br>
+            <label class="col-sm-2 control-label">Working time:</label>
+            <input type="text" name="WorkingDaysandTimes" placeholder="Monday-Friday 09.00-17.00"/></br>
+            <label class="col-sm-2 control-label">Email:</label>
+            <input type="text" name="Email" placeholder="name@dentist.sk"/></br>
+            <label class="col-sm-2 control-label">Confirm:</label>
+            <input type="submit" value="Add Staff Member"/>
+            </form>
+        ';
+    }
+    
     private function displayServices() {
         $db = new Db();
         $products = $db->query("
@@ -182,11 +267,11 @@ class Admin
             FROM dentist.services AS Services
         ");
         echo '<div>
-        <a href="?page=addproduct" class="btn btn-primary">Add Service</a>
+        <a href="?page=addservice" class="btn btn-primary">Add Service</a>
         </div>';
         echo '<table class="table table-striped">';
         echo '<tr>';
-        echo '<th>ServiceID</th><th>ServicePrice</th><th>Description</th><th>ServiceName</th><th>action</th>';
+        echo '<th>ServiceID</th><th>ServicePrice</th><th>Description</th><th>ServiceName</th><th>Discount</th><th>DiscountStartDate</th><th>DiscountEndDate</th><th>Image</th><th>Action</th>';
         echo '</tr>';
         while($service = mysqli_fetch_array($products, MYSQL_ASSOC)) {
             echo '<tr>
@@ -200,9 +285,13 @@ class Admin
                 $service['Description']).'
                 </td>
                 <td>'.$service['ServiceName'].'</td>
+                <td>'.$service['Discount'].'</td>
+                <td>'.$service['DiscountStartDate'].'</td>
+                <td>'.$service['DiscountEndDate'].'</td>
+                <td>'.$service['Image'].'</td>
                 <td>
-                <a href="?page=editproduct&id='.$service['ServiceID'].'" class="btn btn-default">Edit</a>
-                <a href="?page=deleteproduct&id='.$service['ServiceID'].'" class="btn btn-default">Delete</a>
+                <a href="?page=editservice&id='.$service['ServiceID'].'" class="btn btn-default">Edit</a>
+                <a href="?page=deleteservice&id='.$service['ServiceID'].'" class="btn btn-default">Delete</a>
                 </td>
             </tr>';
         }
@@ -220,7 +309,7 @@ class Admin
         </div>';
         echo '<table class="table table-striped">';
         echo '<tr>';
-        echo '<th>ID</th><th>Name</th><th>Qualifications</th><th>JobTitle</th><th>Image</th><th>Public</th><th>WorkingDaysandTimes</th><th>Email</th><th>action</th>';
+        echo '<th>ID</th><th>Name</th><th>Qualifications</th><th>JobTitle</th><th>Image</th><th>Public</th><th>WorkingDaysandTimes</th><th>Email</th><th>Action</th>';
         echo '</tr>';
         while($staff = mysqli_fetch_array($products, MYSQL_ASSOC)) {
             echo '<tr>
@@ -303,12 +392,32 @@ class Admin
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <input type="submit" class="btn btn-default">
+                            <input type="submit" value="Login" class="btn btn-default">
                         </div>
                     </div>
                 </form>
             </div>
         ';
+    }
+    
+    private function Logout(){
+// Unset all of the session variables.
+$_SESSION = array();
+
+// If it's desired to kill the session, also delete the session cookie.
+// Note: This will destroy the session, and not just the session data!
+if (ini_get("session.use_cookies")) {
+    $params = session_get_cookie_params();
+    setcookie(session_name(), '', time() - 42000,
+        $params["path"], $params["domain"],
+        $params["secure"], $params["httponly"]
+    );
+}
+
+// Finally, destroy the session.
+session_destroy();
+// And back to Login start page.
+header("location:index.php");
     }
 }
 new Admin();
