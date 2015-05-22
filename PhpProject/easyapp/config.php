@@ -25,7 +25,7 @@ class Config {
     // ------------------------------------------------------------------------
     // General Settings
     // ------------------------------------------------------------------------
-    const BASE_URL      = 'http://localhost/easyapp/';
+    const BASE_URL      = 'http://localhost/PHPLINUX/PhpProject/easyapp';
     const DEBUG_MODE    = TRUE;
      
     // ------------------------------------------------------------------------

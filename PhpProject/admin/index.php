@@ -10,7 +10,7 @@ session_start();
 <body>
     <div class="container">
         <div class="page-header text-center">Admin page</div>
-        <p class="text-center">Dentist from another Universe Database Administration</p>
+        <p class="text-center">Dentists from another Universe Database Administration</p>
     </div>
 <div class="container">
     <?php include "Admin.php"; ?>

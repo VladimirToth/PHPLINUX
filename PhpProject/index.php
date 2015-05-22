@@ -33,7 +33,7 @@
         <ul class="nav navbar-nav nav-justified">
           <li><a href="#section4">Offers</a></li>
           <li><a href="#section2">Our Staff</a></li>
-          <li class="dropdown">
+<!--          <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Appointment
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -44,8 +44,8 @@
             <li><a href="appointment.php#section5">Root canal therapy</a></li>
             <li><a href="appointment.php#section6">Teeth whitening</a></li>
           </ul>
-        </li>
-          <!--<li><a href="appointment.php">Appointment</a></li>-->
+        </li>-->
+          <li><a href="easyapp/index.php">Appointment</a></li>
           <li class="active"><a href="#section1"><strong>Welcome</strong></a></li>
           <li><a href="#section3">About</a></li>
           <li><a href="#section5">Contact</a></li>
@@ -194,16 +194,16 @@
   <div class="col-sm-6 col-sm-offset-3 text-center">
       <h2 style="padding:20px;background-color:rgba(5,5,5,.8)">
           Our Procedures</h2>
-      <p style="color:black">Our goal is to provide you with excellent care in a comfortable 
+      <p class="text-justify" style="color:black">Our goal is to provide you with excellent care in a comfortable 
           and relaxed environment. Toward that end, we use the most current periodontal procedures,
           instruments, medications, and sterilization techniques.</p>
       
-      <p style="color: black">Every procedure is done with your comfort and safety in mind. 
+      <p class="text-justify" style="color: black">Every procedure is done with your comfort and safety in mind. 
           We work closely with your general dentist to ensure you get the best possible care. 
           We want you to be completely informed of your condition and encourage you to ask 
           any questions you may have regarding your treatment and care.</p>
       
-      <p style="color: black">After treatment, home care and medication instructions will be 
+      <p class="text-justify" style="color: black">After treatment, home care and medication instructions will be 
           thoroughly explained. For your convenience, you will also be given printed instructions.</p>
   </div>
 </section>
@@ -291,7 +291,7 @@
       Our feedback:
     </p>
     <p class="text-center">
-      blablabla
+      I am very satisfied that i chose dentists from another Universe. Not only for fair prices, but their care for patients is pure perfection. Thank You very much and i strongly recommned this clinic for everybody. Vierka from Petrzalka
     </p>
   </div>
     
