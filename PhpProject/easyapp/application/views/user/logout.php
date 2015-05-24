@@ -77,6 +77,11 @@
             <i class="icon-home icon-white"></i>
             <?php echo $this->lang->line('backend_section'); ?>
         </a>
+        
+         <a href="<?php echo $this->config->base_url(); ?>../" class="btn btn-danger btn-large">
+            <i class="icon-home icon-white"></i>
+            <?php echo $this->lang->line('main_page'); ?>
+        </a>
     </div>
 </body>
 </html>
